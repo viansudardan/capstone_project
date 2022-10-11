@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
 #import yfinance as yf
-import fontstyle as tx
-import matplotlib.pyplot as plt
-import shap
-from sklearn import datasets
-from sklearn.ensemble import RandomForestRegressor
+#import fontstyle as tx
+#import matplotlib.pyplot as plt
+#import shap
+#from sklearn import datasets
+#from sklearn.ensemble import RandomForestRegressor
 from datetime import datetime
 
 #st.title("Dampak Inflasi AS terhadap Perekonomian Indonesia")
