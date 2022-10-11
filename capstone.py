@@ -12,6 +12,7 @@ import pandas as pd
 #from pydrive.drive import GoogleDrive
 #import requests
 #from io import BytesIO
+import xlrd 
 
 #st.title("Dampak Inflasi AS terhadap Perekonomian Indonesia")
 #st.set_page_config(layout='wide')
@@ -27,7 +28,7 @@ st.markdown("Kondisi perekonomian dunia saat ini tengah mengalami guncangan heba
 st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan Agustus 2022 mencatat tingkat inflasi AS menurun menjadi 8,3%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
 df = pd.read_excel('https://github.com/viansudardan/capstone_project/blob/main/DataInflasiIND.xlsx')
 #df = pd.read_excel('https://docs.google.com/spreadsheets/d/1uySLhqVWYaoWhIBjqxFzakGmw3F3Wiea/edit?usp=sharing&ouid=102342643769211379317&rtpof=true&sd=true')
-
+#wb = xlrd.open_workbook('https://github.com/viansudardan/capstone_project/blob/main/DataInflasiIND.xlsx')
 df['Periode'] = pd.to_datetime(df['Periode'])
 
 #df2 = df.drop([''], axis = 1)
