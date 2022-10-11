@@ -12,7 +12,7 @@ import pandas as pd
 #from pydrive.drive import GoogleDrive
 #import requests
 #from io import BytesIO
-import xlrd 
+#import xlrd 
 
 #st.title("Dampak Inflasi AS terhadap Perekonomian Indonesia")
 #st.set_page_config(layout='wide')
