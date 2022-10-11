@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 #import yfinance as yf
 #import fontstyle as tx
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #import shap
 #from sklearn import datasets
 #from sklearn.ensemble import RandomForestRegressor
@@ -25,7 +25,7 @@ Made with **streamlit** by Novianto Sudardan
 """)
 st.markdown("Kondisi perekonomian dunia saat ini tengah mengalami guncangan hebat akibat dari kondisi yang kian tidak menentu, dimulai dari krisis kesehatan global akibat pandemi yang terjadi pada awal tahun 2020, kemudian dilanjutkan dengan pecahnya perang yang terjadi antara Rusia dan Ukrania yang menyebabkan supply disruption terhadap berbagai komoditas di beberapa negara, konflik yang berkepanjangan ini menyebabkan efek domino, tidak hanya memicu krisis energi tetapi juga krisis pangan, sehingga hal ini menyebabkan terjadinya inflasi global, beberapa negara kemudian menyikapinya dengan mengeluarkan kebijakan seperti pengetatan kebijakan moneter untuk mengurangi dampak negatif yang ditimbulkan akibat isu geopolitik yang terjadi saat ini.")
 st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan Agustus 2022 mencatat tingkat inflasi AS menurun menjadi 8,3%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
-df = pd.read_excel('/Users/vianbeladona/Desktop/tetris/DataInflasiAS.xlsx')
+df = pd.read_excel('https://github.com/viansudardan/capstone_project/blob/main/DataInflasiIND.xlsx')
 #df = pd.read_excel('https://docs.google.com/spreadsheets/d/1uySLhqVWYaoWhIBjqxFzakGmw3F3Wiea/edit?usp=sharing&ouid=102342643769211379317&rtpof=true&sd=true')
 
 df['Periode'] = pd.to_datetime(df['Periode'])
@@ -35,8 +35,8 @@ st.subheader('Tingkat Inflasi AS')
 #st.dataframe(df)
 
 inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
-plt.grid()
-plt.show()
+#plt.grid()
+#plt.show()
 st.line_chart(inflasi)
 
 st.subheader('Suku Bunga Acuan The Fed')
@@ -46,8 +46,8 @@ df2 = pd.read_excel('/Users/vianbeladona/Desktop/tetris/suku_bunga_the_fed.xlsx'
 df2['Bulan'] = pd.to_datetime(df2['Bulan'])
 
 sukubunga = df2[['Bulan', 'Suku Bunga']].set_index('Bulan')
-plt.grid()
-plt.show()
+#plt.grid()
+#plt.show()
 st.line_chart(sukubunga)
 
 st.markdown('Peningkatan suku bunga di AS dapat memicu aliran modal global akan meninggalkan negara berkembang termasuk Indonesia (capital outflow). Investor berbondong-bondong akan menginvestasikan modalnya pada pasar modal di AS, karena tergiur dengan kenaikan suku bunga tersebut. Dampak yang ditimbulkan adalah nilai tukar rupiah yang akan semakin melemah terhadap dollar AS.')
@@ -60,8 +60,8 @@ df3 = pd.read_excel('/Users/vianbeladona/Desktop/tetris/Kurs_Rupiah.xlsx')
 df3['Tanggal'] = pd.to_datetime(df3['Tanggal'])
 
 kurs = df3[['Tanggal', 'Kurs Jual']].set_index('Tanggal')
-plt.grid()
-plt.show()
+#plt.grid()
+#plt.show()
 st.line_chart(kurs)
 
 st.markdown('Untuk merespon kebijakan tersebut, Bank Sentral diberbagai negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing, tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022. Namun harus menjadi perhatian bagi pemerintah bahwasannya kenaikan suku bunga berarti akan memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
@@ -72,8 +72,6 @@ df4 = pd.read_excel('/Users/vianbeladona/Desktop/tetris/suku_bunga_bi.xlsx')
 df4['Bulan'] = pd.to_datetime(df4['Bulan'])
 
 sukubungaBI = df4[['Bulan', 'Suku Bunga']].set_index('Bulan')
-plt.grid()
-plt.show()
 st.line_chart(sukubungaBI)
 
 #st.markdown('Selain itu tingkat inflasi AS yang tinggi dapat mengganggu kinerja ekspor tujuan AS. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
@@ -91,8 +89,6 @@ df6 = pd.read_excel('/Users/vianbeladona/Desktop/tetris/pertumbuhan_ekonomi.xlsx
 df6['date'] = pd.to_datetime(df6['date'])
 
 pertumbuhan = df6[['date', 'Pertumbuhan Tahunan']].set_index('date')
-plt.grid()
-plt.show()
 st.line_chart(pertumbuhan)
 st.subheader('Lalu, apa yang harus dilakukan oleh Pemerintah RI')
 st.markdown('Peningkatan inflasi yang terjadi di AS mau tidak mau berimbas terhadap kondisi perekonomian di Indonesia. Tingginya inflasi AS memicu kenaikan suku bunga BI, kenaikan harga barang, serta pelemahan terhadap nilai tukar mata uang Rupiah, dimana beberapa variabel tersebut dapat membuat pertumbuhan ekonomi Indonesia mengalami perlambatan. Pada kali ini Indonesia masih kuat menahan dampak inflasi AS karena sebetulnya inflasi di Indonesia sendiri lebih disebabkan oleh fenomena domestik, yaitu faktor volatile foods sebagai penyumbang utama dan juga dibantu dengan harga komoditas ekspor Indonesia yang meningkat.')
