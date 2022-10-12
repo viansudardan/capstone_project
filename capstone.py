@@ -2,14 +2,23 @@ import streamlit as st
 import pandas as pd
 #import yfinance as yf
 #import fontstyle as tx
+#import matplotlib.pyplot as plt
+#import shap
+#from sklearn import datasets
+#from sklearn.ensemble import RandomForestRegressor
 from datetime import datetime
+import pandas as pd
 #from pydrive.auth import GoogleAuth
 #from pydrive.drive import GoogleDrive
-import requests
-from io import BytesIO
+#import requests
+#from io import BytesIO
 #import xlrd 
 
+#st.title("Dampak Inflasi AS terhadap Perekonomian Indonesia")
 #st.set_page_config(layout='wide')
+#st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
+#st.image("/Users/vianbeladona/Desktop/inflation.jpg")
+
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
 st.write("""
@@ -17,20 +26,21 @@ Made with **streamlit** by Novianto Sudardan
 """)
 st.markdown("Kondisi perekonomian dunia saat ini tengah mengalami guncangan hebat akibat dari kondisi yang kian tidak menentu, dimulai dari krisis kesehatan global akibat pandemi yang terjadi pada awal tahun 2020, kemudian dilanjutkan dengan pecahnya perang yang terjadi antara Rusia dan Ukrania yang menyebabkan supply disruption terhadap berbagai komoditas di beberapa negara, konflik yang berkepanjangan ini menyebabkan efek domino, tidak hanya memicu krisis energi tetapi juga krisis pangan, sehingga hal ini menyebabkan terjadinya inflasi global, beberapa negara kemudian menyikapinya dengan mengeluarkan kebijakan seperti pengetatan kebijakan moneter untuk mengurangi dampak negatif yang ditimbulkan akibat isu geopolitik yang terjadi saat ini.")
 st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan Agustus 2022 mencatat tingkat inflasi AS menurun menjadi 8,3%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
-#sheet_id = “1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM”
-#sheet_name = “DataInflasiAS”
-#url = f”https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
-<<<<<<< HEAD
-#url = '(https://docs.google.com/spreadsheets/d/1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM)'
-df = pd.read_excel('https://docs.google.com/spreadsheets/d/1uySLhqVWYaoWhIBjqxFzakGmw3F3Wiea/')
-=======
-url = 'https://docs.google.com/spreadsheets/d/1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM/export'
-df = pd.read_excel(url)
->>>>>>> parent of 4ef411c (Update capstone.py)
-df['Periode'] = pd.to_datetime(df['Periode'])
+#df = pd.read_excel('https://github.com/viansudardan/capstone_project/blob/main/DataInflasiIND.xlsx')
+#df = pd.read_excel('https://docs.google.com/spreadsheets/d/1uySLhqVWYaoWhIBjqxFzakGmw3F3Wiea/edit?usp=sharing&ouid=102342643769211379317&rtpof=true&sd=true')
+#wb = xlrd.open_workbook('https://github.com/viansudardan/capstone_project/blob/main/DataInflasiIND.xlsx')
+#df['Periode'] = pd.to_datetime(df['Periode'])
+
+public_gsheets_url = "https://docs.google.com/spreadsheets/d/1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM/edit?usp=sharing"
+
+#df2 = df.drop([''], axis = 1)
 st.subheader('Tingkat Inflasi AS')
-inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
-st.line_chart(inflasi)
+#st.dataframe(df)
+
+#inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
+#plt.grid()
+#plt.show()
+#st.line_chart(inflasi)
 
 st.subheader('Suku Bunga Acuan The Fed')
 
