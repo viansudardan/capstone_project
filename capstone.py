@@ -7,7 +7,7 @@ from datetime import datetime
 #from pydrive.drive import GoogleDrive
 import requests
 from io import BytesIO
-#import xlrd 
+import xlrd 
 
 #st.set_page_config(layout='wide')
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
