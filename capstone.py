@@ -31,7 +31,7 @@ st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai ne
 #df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
 #df = pd.read_excel('https://docs.google.com/spreadsheets/d/1uySLhqVWYaoWhIBjqxFzakGmw3F3Wiea/edit?usp=sharing&ouid=102342643769211379317&rtpof=true&sd=true')
 #wb = xlrd.open_workbook('https://github.com/viansudardan/capstone_project/blob/main/DataInflasiAS.xlsx')
-df = pd.read_excel('DataInflasiAS.xlsx')
+df = pd.read_excel('./DataInflasiAS.xlsx')
 df['Periode'] = pd.to_datetime(df['Periode'])
 
 public_gsheets_url = "https://docs.google.com/spreadsheets/d/1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM/edit?usp=sharing"
