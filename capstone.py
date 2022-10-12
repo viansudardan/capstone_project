@@ -21,8 +21,8 @@ st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai ne
 #sheet_name = “DataInflasiAS”
 #url = f”https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 url = '(https://docs.google.com/spreadsheets/d/1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM&output=xlsx/)'
-data = url.content
-df = pd.read_excel(data)
+#data = url.content
+df = pd.read_excel(url)
 df['Periode'] = pd.to_datetime(df['Periode'])
 st.subheader('Tingkat Inflasi AS')
 inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
