@@ -41,8 +41,8 @@ st.subheader('Tingkat Inflasi AS')
 #st.dataframe(df)
 
 inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
-plt.grid()
-plt.show()
+#plt.grid()
+#plt.show()
 st.line_chart(inflasi)
 
 st.subheader('Suku Bunga Acuan The Fed')
