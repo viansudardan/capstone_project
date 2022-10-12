@@ -7,7 +7,7 @@ from datetime import datetime
 #from pydrive.drive import GoogleDrive
 import requests
 from io import BytesIO
-import xlrd 
+#import xlrd 
 
 #st.set_page_config(layout='wide')
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
@@ -20,9 +20,8 @@ st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai ne
 #sheet_id = '1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM'
 #sheet_name = “DataInflasiAS”
 #url = f”https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
-url = '(https://docs.google.com/spreadsheets/d/1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM&output=xlsx/)'
-#data = url.content
-df = pd.read_excel(url)
+#url = '(https://docs.google.com/spreadsheets/d/1apCe5kVwegEpP6Zhs821wzoaiC5BHKAT8F5ySI5sXqM)'
+df = pd.read_excel('https://docs.google.com/spreadsheets/d/1uySLhqVWYaoWhIBjqxFzakGmw3F3Wiea/')
 df['Periode'] = pd.to_datetime(df['Periode'])
 st.subheader('Tingkat Inflasi AS')
 inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
