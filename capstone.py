@@ -3,8 +3,8 @@ import pandas as pd
 #import yfinance as yf
 #import fontstyle as tx
 from datetime import datetime
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+#from pydrive.auth import GoogleAuth
+#from pydrive.drive import GoogleDrive
 #import requests
 #from io import BytesIO
 #import xlrd 
