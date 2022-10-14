@@ -18,6 +18,17 @@ import plotly.express as px
 #st.set_page_config(layout='wide')
 #st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
 #st.image("/Users/vianbeladona/Desktop/inflation.jpg")
+class color:
+   PURPLE = '\033[95m'
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
 
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
@@ -39,7 +50,7 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
 df.head()
 fig = px.line(df, x='Periode', y='Data Inflasi', markers=True)
-fig.update_layout(title='Tingkat Inflasi AS',
+fig.update_layout(title= color.BOLD + 'Tingkat Inflasi AS' + color.END,
                    xaxis_title='Tahun',
                    yaxis_title='Tingkat Inflasi (%)')
 fig.show()
