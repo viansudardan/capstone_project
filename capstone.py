@@ -72,7 +72,8 @@ with c3:
    st.caption("<p style='text-align: center;'>sumber :Bank Indonesia</p>", unsafe_allow_html=True)
 
 with c4:
-   st.markdown('Untuk merespon kebijakan tersebut, Bank Sentral diberbagai negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing, tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022. Namun harus menjadi perhatian bagi pemerintah bahwasannya kenaikan suku bunga berarti akan memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
+   st.markdown('Untuk merespon kebijakan tersebut, Bank Sentral diberbagai negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing (capital outflow), tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022.')
+   #Namun harus menjadi perhatian bagi pemerintah bahwasannya kenaikan suku bunga berarti akan memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.
    st.markdown('Dampak lainnya biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara termasuk produk yang ada di Indonesia yang mengambil bahan baku dari AS.')
 #st.subheader('Suku Bunga Acuan Bank Indonesia (BI)')
 #df4 = pd.read_excel('./suku_bunga_bi.xlsx')
