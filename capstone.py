@@ -38,7 +38,7 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 #df = px.data.gapminder().query("continent=='Oceania'")
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
 df.head()
-fig = px.line(df, x='Periode', y='Data Inflasi', markers=True)
+fig = px.line(x=df['Periode'], y=df['Data Inflasi'], x = 'Periode', y = 'Tingkat Inflasi (%)',markers=True)
 fig.show()
 st.plotly_chart(fig, use_container_width=True)
 
