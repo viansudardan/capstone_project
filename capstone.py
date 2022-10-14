@@ -1,5 +1,9 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+#import colorama as init
+#from colorama import init
+#from termcolor import colored
 #import yfinance as yf
 #import fontstyle as tx
 #import matplotlib.pyplot as plt
@@ -7,7 +11,6 @@ import pandas as pd
 #from sklearn import datasets
 #from sklearn.ensemble import RandomForestRegressor
 #from datetime import datetime
-import plotly.express as px
 #from pydrive.auth import GoogleAuth
 #from pydrive.drive import GoogleDrive
 #import requests
@@ -50,7 +53,7 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
 df.head()
 fig = px.line(df, x='Periode', y='Data Inflasi', markers=True)
-fig.update_layout(title= + color.BOLD + 'Tingkat Inflasi AS' + color.END,
+fig.update_layout(title= color.BOLD + 'Tingkat Inflasi AS',
                    xaxis_title='Tahun',
                    yaxis_title='Tingkat Inflasi (%)')
 fig.show()
