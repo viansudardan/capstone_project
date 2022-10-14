@@ -40,6 +40,7 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 df.head()
 fig = px.line(df, x='Periode', y='Data Inflasi', title='Data Inflasi AS')
 fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 st.subheader('Suku Bunga Acuan The Fed')
 df2 = pd.read_excel('./suku_bunga_the_fed.xlsx')
