@@ -8,6 +8,7 @@ import pandas as pd
 #from sklearn.ensemble import RandomForestRegressor
 from datetime import datetime
 import pandas as pd
+import plotly_express as px
 #from pydrive.auth import GoogleAuth
 #from pydrive.drive import GoogleDrive
 #import requests
@@ -30,8 +31,12 @@ st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai ne
 st.subheader('Tingkat Inflasi AS')
 df = pd.read_excel('./DataInflasiAS.xlsx')
 df['Periode'] = pd.to_datetime(df['Periode'])
-inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
-st.line_chart(inflasi)
+#inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
+#st.line_chart(inflasi)
+
+#df = px.data.gapminder().query("continent=='Oceania'")
+fig = px.line(df, x="Periode", y="Data Inflasi")
+fig.show()
 
 st.subheader('Suku Bunga Acuan The Fed')
 df2 = pd.read_excel('./suku_bunga_the_fed.xlsx')
