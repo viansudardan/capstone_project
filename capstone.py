@@ -8,7 +8,7 @@ import pandas as pd
 #from sklearn.ensemble import RandomForestRegressor
 from datetime import datetime
 import pandas as pd
-import plotly_express as px
+import plotly.express as px
 #from pydrive.auth import GoogleAuth
 #from pydrive.drive import GoogleDrive
 #import requests
