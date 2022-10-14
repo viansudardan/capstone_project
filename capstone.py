@@ -27,7 +27,7 @@ Made with **streamlit** by Novianto Sudardan
 st.markdown("Kondisi perekonomian dunia saat ini tengah mengalami guncangan hebat akibat dari kondisi yang kian tidak menentu, dimulai dari krisis kesehatan global akibat pandemi yang terjadi pada awal tahun 2020, kemudian dilanjutkan dengan pecahnya perang yang terjadi antara Rusia dan Ukrania yang menyebabkan supply disruption terhadap berbagai komoditas di beberapa negara, konflik yang berkepanjangan ini menyebabkan efek domino, tidak hanya memicu krisis energi tetapi juga krisis pangan, sehingga hal ini menyebabkan terjadinya inflasi global, beberapa negara kemudian menyikapinya dengan mengeluarkan kebijakan seperti pengetatan kebijakan moneter untuk mengurangi dampak negatif yang ditimbulkan akibat isu geopolitik yang terjadi saat ini.")
 st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan Agustus 2022 mencatat tingkat inflasi AS menurun menjadi 8,3%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
 
-st.subheader('Tingkat Inflasi AS')
+#st.subheader('Tingkat Inflasi AS')
 #df = pd.read_excel('./DataInflasiAS.xlsx')
 df = pd.read_excel('./DataInflasiAS.xlsx')
 #df['Periode'] = pd.to_datetime(df['Periode'])
@@ -38,10 +38,12 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 #df = px.data.gapminder().query("continent=='Oceania'")
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
 df.head()
-fig = px.line(df, x='Periode', y='Data Inflasi', xaxis_title='Tahun',
-                   yaxis_title='Tingkat Inflasi (%)', markers=True)
+fig = px.line(df, x='Periode', y='Data Inflasi', markers=True)
+fig.update_layout(title='Tingkat Inflasi AS',
+                   xaxis_title='Periode',
+                   yaxis_title='Tingkat Inflasi (%)')
 fig.show()
-st.plotly_chart(fig, use_container_width=False)
+st.plotly_chart(fig, use_container_width=True)
 
 st.subheader('Suku Bunga Acuan The Fed')
 df2 = pd.read_excel('./suku_bunga_the_fed.xlsx')
