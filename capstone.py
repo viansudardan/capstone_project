@@ -51,7 +51,7 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 
 #df = px.data.gapminder().query("continent=='Oceania'")
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
-st.write('**Suku Bunga Acuan The Fed & Tingkat Inflasi di AS')
+st.write(""" **Suku Bunga Acuan The Fed & Tingkat Inflasi di AS** """)
 fig = px.line(df, x='Periode', y='Data Inflasi', markers=True, color='Rate')
 fig.update_layout(xaxis_title='Tahun', yaxis_title='Persentase (%)')
 fig.show()
