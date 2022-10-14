@@ -31,7 +31,7 @@ st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai ne
 st.subheader('Tingkat Inflasi AS')
 df = pd.read_excel('./DataInflasiAS.xlsx')
 df['Periode'] = pd.to_datetime(df['Periode'])
-df = df.set_index("data")
+df = df.set_index('data')
 #inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
 #st.line_chart(inflasi)
 
