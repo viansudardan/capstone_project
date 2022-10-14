@@ -7,7 +7,6 @@ import pandas as pd
 #from sklearn import datasets
 #from sklearn.ensemble import RandomForestRegressor
 from datetime import datetime
-import pandas as pd
 import plotly.express as px
 #from pydrive.auth import GoogleAuth
 #from pydrive.drive import GoogleDrive
@@ -29,15 +28,16 @@ st.markdown("Kondisi perekonomian dunia saat ini tengah mengalami guncangan heba
 st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan Agustus 2022 mencatat tingkat inflasi AS menurun menjadi 8,3%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
 
 st.subheader('Tingkat Inflasi AS')
-df = pd.read_excel('./DataInflasiAS.xlsx')
-df['Periode'] = pd.to_datetime(df['Periode'])
+#df = pd.read_excel('./DataInflasiAS.xlsx')
+df = pd.read_excel('https://github.com/viansudardan/capstone_project/blob/main/DataInflasiAS.xlsx')
+#df['Periode'] = pd.to_datetime(df['Periode'])
 #df = df.set_index('data')
 #inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
 #st.line_chart(inflasi)
 
 #df = px.data.gapminder().query("continent=='Oceania'")
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
-fig = px.line(df, x='Periode', y='Data Inflasi')
+fig = px.line(df, x='Periode', y='Data Inflasi', title='Data Inflasi AS')
 fig.show()
 
 st.subheader('Suku Bunga Acuan The Fed')
