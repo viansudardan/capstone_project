@@ -58,11 +58,11 @@ fig.show()
 st.plotly_chart(fig, use_container_width=True)
 st.caption('sumber : ')
 
-st.subheader('Suku Bunga Acuan The Fed')
-df2 = pd.read_excel('./suku_bunga_the_fed.xlsx')
-df2['Bulan'] = pd.to_datetime(df2['Bulan'])
-sukubunga = df2[['Bulan', 'Suku Bunga']].set_index('Bulan')
-st.line_chart(sukubunga)
+#st.subheader('Suku Bunga Acuan The Fed')
+#df2 = pd.read_excel('./suku_bunga_the_fed.xlsx')
+#df2['Bulan'] = pd.to_datetime(df2['Bulan'])
+#sukubunga = df2[['Bulan', 'Suku Bunga']].set_index('Bulan')
+#st.line_chart(sukubunga)
 
 st.markdown('Peningkatan suku bunga di AS dapat memicu aliran modal global akan meninggalkan negara berkembang termasuk Indonesia (capital outflow). Investor berbondong-bondong akan menginvestasikan modalnya pada pasar modal di AS, karena tergiur dengan kenaikan suku bunga tersebut. Dampak yang ditimbulkan adalah nilai tukar rupiah yang akan semakin melemah terhadap dollar AS.')
 
