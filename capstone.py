@@ -53,7 +53,7 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
 df.head()
 fig = px.line(df, x='Periode', y='Data Inflasi', markers=True)
-fig.update_layout(title= "<h3 style='text-align: center; color: black;'>Tingkat Inflasi AS</h3>",
+fig.update_layout(title= 'Tingkat Inflasi', fontsize=30,
                    xaxis_title='Tahun',
                    yaxis_title='Tingkat Inflasi (%)')
 fig.show()
