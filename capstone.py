@@ -35,8 +35,7 @@ df['Periode'] = pd.to_datetime(df['Periode'])
 #st.line_chart(inflasi)
 
 #df = px.data.gapminder().query("continent=='Oceania'")
-#fig = px.line(df, x = 'Periode', y = 'Data Inflasi', title = 'Data Inflasi AS')
-fig = px.line(df)
+fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
 fig.show()
 
 st.subheader('Suku Bunga Acuan The Fed')
