@@ -73,21 +73,32 @@ with c3:
 
 with c4:
    st.markdown('Untuk merespon kebijakan tersebut, Bank Sentral diberbagai negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing (capital outflow), tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022.')
-   #Namun harus menjadi perhatian bagi pemerintah bahwasannya kenaikan suku bunga berarti akan memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.
-   st.markdown('Dampak lainnya biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara termasuk produk yang ada di Indonesia yang mengambil bahan baku dari AS.')
+   st.markdown('Dampak lainnya adalah biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara termasuk produk yang ada di Indonesia yang mengambil bahan baku dari AS.')
 #st.subheader('Suku Bunga Acuan Bank Indonesia (BI)')
 #df4 = pd.read_excel('./suku_bunga_bi.xlsx')
 #df4['Bulan'] = pd.to_datetime(df4['Bulan'])
 #sukubungaBI = df4[['Bulan', 'Suku Bunga']].set_index('Bulan')
 #st.line_chart(sukubungaBI)
 
-st.markdown('Peningkatan suku bunga di AS dapat memicu aliran modal global akan meninggalkan negara berkembang termasuk Indonesia (capital outflow). Investor berbondong-bondong akan menginvestasikan modalnya pada pasar modal di AS, karena tergiur dengan kenaikan suku bunga tersebut. Dampak yang ditimbulkan adalah nilai tukar rupiah yang akan semakin melemah terhadap dollar AS.')
+c5, c6 = st.columns([1,2])
+with c5:
+   st.markdown('Peningkatan suku bunga yang tinggi di AS dapat memicu para investor untuk menginvestasikan modal di negaranya karena tergiur dengan bunga yang tinggi, hal ini akan membuat aliran modal global meninggalkan negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia.')
+   st.markdown('Dampak yang ditimbulkan adalah nilai tukar mata uang dollar AS akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
+   #Namun harus menjadi perhatian bagi pemerintah bahwasannya kenaikan suku bunga berarti akan memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.
+with c6:
+   df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
+   fig3 = px.line(df3, x='Tanggal', y='Kurs Jual', markers=True)
+   fig3.update_layout(title = 'Kurs Dollar Terhadap Mata Uang Dunia', xaxis_title='Tanggal', yaxis_title='Nilai Kurs')
+   fig3.show()
+   st.plotly_chart(fig3, use_container_width=True)
+   st.caption("<p style='text-align: center;'>sumber :Bank Indonesia</p>", unsafe_allow_html=True)
 
-st.subheader('Nilai Tukar Mata Uang Rupiah')
-df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
-df3['Tanggal'] = pd.to_datetime(df3['Tanggal'])
-kurs = df3[['Tanggal', 'Kurs Jual']].set_index('Tanggal')
-st.line_chart(kurs)
+
+#st.subheader('Nilai Tukar Mata Uang Rupiah')
+#df4 = pd.read_excel('./Kurs_Rupiah.xlsx')
+#df3['Tanggal'] = pd.to_datetime(df3['Tanggal'])
+#kurs = df3[['Tanggal', 'Kurs Jual']].set_index('Tanggal')
+#st.line_chart(kurs)
 
 
 #st.subheader('Tingkat Inflasi di Beberapa Negara')
