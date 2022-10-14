@@ -63,7 +63,7 @@ with c2:
 
 
 c3, c4 = st.columns([2,1])
-with c1:
+with c3:
    df2 = pd.read_excel('./DataInflasiIND.xlsx')
    fig2 = px.line(df2, x='Periode', y='Nilai', markers=True, color='Rate')
    fig2.update_layout(title = 'Suku Bunga Acuan BI & Tingkat Inflasi di Indonesia', xaxis_title='Tahun', yaxis_title='Persentase (%)')
@@ -71,7 +71,7 @@ with c1:
    st.plotly_chart(fig2, use_container_width=True)
    st.caption("<p style='text-align: center;'>sumber :Bank Indonesia</p>", unsafe_allow_html=True)
 
-with c2:
+with c4:
    st.markdown('Untuk merespon kebijakan tersebut, Bank Sentral diberbagai negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing, tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022. Namun harus menjadi perhatian bagi pemerintah bahwasannya kenaikan suku bunga berarti akan memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
 
 #st.subheader('Suku Bunga Acuan Bank Indonesia (BI)')
