@@ -18,20 +18,9 @@ import plotly.express as px
 #import xlrd 
 
 #st.title("Dampak Inflasi AS terhadap Perekonomian Indonesia")
-#st.set_page_config(layout='wide')
+st.set_page_config(layout='wide')
 #st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
 #st.image("/Users/vianbeladona/Desktop/inflation.jpg")
-class color:
-   PURPLE = '\033[95m'
-   CYAN = '\033[96m'
-   DARKCYAN = '\033[36m'
-   BLUE = '\033[94m'
-   GREEN = '\033[92m'
-   YELLOW = '\033[93m'
-   RED = '\033[91m'
-   BOLD = '\033[1m'
-   UNDERLINE = '\033[4m'
-   END = '\033[0m'
 
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
@@ -39,11 +28,23 @@ st.write("""
 Made with **streamlit** by Novianto Sudardan
 """)
 st.markdown("Kondisi perekonomian dunia saat ini tengah mengalami guncangan hebat akibat dari kondisi yang kian tidak menentu, dimulai dari krisis kesehatan global akibat pandemi yang terjadi pada awal tahun 2020, kemudian dilanjutkan dengan pecahnya perang yang terjadi antara Rusia dan Ukrania yang menyebabkan supply disruption terhadap berbagai komoditas di beberapa negara, konflik yang berkepanjangan ini menyebabkan efek domino, tidak hanya memicu krisis energi tetapi juga krisis pangan, sehingga hal ini menyebabkan terjadinya inflasi global, beberapa negara kemudian menyikapinya dengan mengeluarkan kebijakan seperti pengetatan kebijakan moneter untuk mengurangi dampak negatif yang ditimbulkan akibat isu geopolitik yang terjadi saat ini.")
-st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan Agustus 2022 mencatat tingkat inflasi AS menurun menjadi 8,3%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
+
+c1, c2 = st.columns(2)
+
+with c1:
+   st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan Agustus 2022 mencatat tingkat inflasi AS menurun menjadi 8,3%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
+with c2:
+   df = pd.read_excel('./DataInflasiAS.xlsx')
+   fig = px.line(df, x='Periode', y='Data Inflasi', markers=True, color='Rate')
+   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', xaxis_title='Tahun', yaxis_title='Persentase (%)')
+   fig.show()
+   st.plotly_chart(fig, use_container_width=True)
+   st.caption("""sumber : __tradingeconomics__""")
+#Made with **streamlit** by [tradingeconomics] (https://tradingeconomics.com/united-states/inflation-cpi)
 
 #st.subheader('Tingkat Inflasi AS')
 #df = pd.read_excel('./DataInflasiAS.xlsx')
-df = pd.read_excel('./DataInflasiAS.xlsx')
+
 #df['Periode'] = pd.to_datetime(df['Periode'])
 #df = df.set_index('data')
 #inflasi = df[['Periode', 'Data Inflasi']].set_index('Periode')
@@ -52,15 +53,6 @@ df = pd.read_excel('./DataInflasiAS.xlsx')
 #df = px.data.gapminder().query("continent=='Oceania'")
 #fig = px.line(df, x = df['Periode'], y = df['Data Inflasi'], title = 'Data Inflasi AS')
 #st.write(""" **Suku Bunga Acuan The Fed & Tingkat Inflasi di AS** """)
-fig = px.line(df, x='Periode', y='Data Inflasi', markers=True, color='Rate')
-fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', xaxis_title='Tahun', yaxis_title='Persentase (%)')
-fig.show()
-st.plotly_chart(fig, use_container_width=True)
-#st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
-st.caption("""
-sumber : [tradingeconomics] (https://tradingeconomics.com/united-states/inflation-cpi)
-""")
-#Made with **streamlit** by [tradingeconomics] (https://tradingeconomics.com/united-states/inflation-cpi)
 
 #st.subheader('Suku Bunga Acuan The Fed')
 #df2 = pd.read_excel('./suku_bunga_the_fed.xlsx')
