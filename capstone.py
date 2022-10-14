@@ -73,7 +73,7 @@ with c3:
 
 with c4:
    st.markdown('Untuk merespon kebijakan tersebut, Bank Sentral diberbagai negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing, tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022. Namun harus menjadi perhatian bagi pemerintah bahwasannya kenaikan suku bunga berarti akan memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
-
+   st.markdown('Dampak lainnya biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara termasuk produk yang ada di Indonesia yang mengambil bahan baku dari AS.')
 #st.subheader('Suku Bunga Acuan Bank Indonesia (BI)')
 #df4 = pd.read_excel('./suku_bunga_bi.xlsx')
 #df4['Bulan'] = pd.to_datetime(df4['Bulan'])
@@ -88,7 +88,6 @@ df3['Tanggal'] = pd.to_datetime(df3['Tanggal'])
 kurs = df3[['Tanggal', 'Kurs Jual']].set_index('Tanggal')
 st.line_chart(kurs)
 
-st.markdown('Dampak lainnya biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara termasuk produk yang ada di Indonesia yang mengambil bahan baku dari AS.')
 
 #st.subheader('Tingkat Inflasi di Beberapa Negara')
 #df5 = pd.read_excel('/Users/vianbeladona/Desktop/tetris/suku_bunga_bi.xlsx')
