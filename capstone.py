@@ -90,6 +90,11 @@ with c6:
 
    tickerGOOGL = yf.Ticker("GOOGL")
    tickerDfGOOGL = tickerAAPL.history(period="1mo")
+   tickerSymbol = st.radio("Pick Stock",["GOOGL", "AAPL"])
+   tickerSymbol_text = st.text_input("Enter Ticker")
+   tickerData = yf.Ticker(tickerSymbol_text)
+   st.header('ini tempat untuk saham AAPL')
+   st.line_chart(tickerDfAAPL['Close'])
    #df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
    #fig3 = px.line(df3, x='Tanggal', y='Kurs Jual', markers=True)
    #ig3.update_layout(title = 'Kurs Dollar AS Terhadap Mata Uang Dunia', xaxis_title='Tanggal', yaxis_title='Nilai Kurs')
