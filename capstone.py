@@ -4,7 +4,7 @@ import plotly.express as px
 #import colorama as init
 #from colorama import init
 #from termcolor import colored
-#import yfinance as yf
+import yfinance as yf
 #import fontstyle as tx
 #import matplotlib.pyplot as plt
 #import shape
@@ -41,7 +41,7 @@ with c2:
    fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2" ,xaxis_title='Tahun', yaxis_title='Persentase (%)')
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
-   st.caption("<p style='text-align: center;'>sumber : tradingeconomics</p>", unsafe_allow_html=True)
+   st.caption("<p style='text-align: center;'>Sumber : Tradingeconomics</p>", unsafe_allow_html=True)
 #Made with **streamlit** by [tradingeconomics] (https://tradingeconomics.com/united-states/inflation-cpi)
 
 #st.subheader('Tingkat Inflasi AS')
@@ -85,12 +85,17 @@ c5, c6 = st.columns([1,2])
 with c5:
    st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global meninggalkan negara-negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia. Hal ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September 2022 adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
 with c6:
-   df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
-   fig3 = px.line(df3, x='Tanggal', y='Kurs Jual', markers=True)
-   fig3.update_layout(title = 'Kurs Dollar AS Terhadap Mata Uang Dunia', xaxis_title='Tanggal', yaxis_title='Nilai Kurs')
-   fig3.show()
-   st.plotly_chart(fig3, use_container_width=True)
-   st.caption("<p style='text-align: center;'>sumber :Bank Indonesia</p>", unsafe_allow_html=True)
+   tickerAAPL = yf.Ticker("AAPL")
+   tickerDfAAPL = tickerAAPL.history(period="1mo")
+
+   tickerGOOGL = yf.Ticker("GOOGL")
+   tickerDfGOOGL = tickerAAPL.history(period="1mo")
+   #df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
+   #fig3 = px.line(df3, x='Tanggal', y='Kurs Jual', markers=True)
+   #ig3.update_layout(title = 'Kurs Dollar AS Terhadap Mata Uang Dunia', xaxis_title='Tanggal', yaxis_title='Nilai Kurs')
+   #fig3.show()
+   #st.plotly_chart(fig3, use_container_width=True)
+   #st.caption("<p style='text-align: center;'>Sumber : Bank Indonesia</p>", unsafe_allow_html=True)
 
 
 #st.subheader('Nilai Tukar Mata Uang Rupiah')
