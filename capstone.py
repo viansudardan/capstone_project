@@ -21,7 +21,7 @@ import plotly.express as px
 st.set_page_config(layout='wide')
 #st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
 #st.image(style="width:100%;height:400px"./inflasi.png")
-st.image("./inflasi.jpg", width = 1000)
+st.image("./inflasi.jpg", width = 1500)
 
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
