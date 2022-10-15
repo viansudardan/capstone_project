@@ -20,7 +20,8 @@ import plotly.express as px
 #st.title("Dampak Inflasi AS terhadap Perekonomian Indonesia")
 st.set_page_config(layout='wide')
 #st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
-#st.image(style="width:100%;height:400px"./inflasi peng.png")
+#st.image(style="width:100%;height:400px"./inflasi.png")
+st.image("./inflasi.jpg")
 
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
@@ -37,7 +38,7 @@ with c2:
    st.markdown("<body style='border-radius: 6px; box-shadow : 0 1px 4px rgba(0,0,0,.23);></body>", unsafe_allow_html=True)
    df = pd.read_excel('./DataInflasiAS.xlsx')
    fig = px.line(df, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#fef" ,xaxis_title='Tahun', yaxis_title='Persentase (%)')
+   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#ffe" ,xaxis_title='Tahun', yaxis_title='Persentase (%)')
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
    st.caption("<p style='text-align: center;'>sumber :tradingeconomics</p>", unsafe_allow_html=True)
