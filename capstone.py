@@ -85,10 +85,10 @@ c5, c6 = st.columns([1,2])
 with c5:
    st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global meninggalkan negara-negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia. Hal ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September 2022 adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
 with c6:
-   tickerAAPL = yf.Ticker("AAPL")
+   tickerAAPL = yf.Ticker("EURUSD")
    tickerDfAAPL = tickerAAPL.history(period="1mo")
 
-   tickerGOOGL = yf.Ticker("GOOGL")
+   tickerGOOGL = yf.Ticker("EURUSD")
    tickerDfGOOGL = tickerAAPL.history(period="1mo")
    tickerSymbol = st.radio("Pick Stock",["GOOGL", "AAPL"])
    tickerSymbol_text = st.text_input("Enter Ticker")
