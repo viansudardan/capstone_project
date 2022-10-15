@@ -41,7 +41,7 @@ with c2:
    fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2" ,xaxis_title='Tahun', yaxis_title='Persentase (%)')
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
-   st.caption("<p style='text-align: center;'>sumber :tradingeconomics</p>", unsafe_allow_html=True)
+   st.caption("<p style='text-align: center;'>sumber : tradingeconomics</p>", unsafe_allow_html=True)
 #Made with **streamlit** by [tradingeconomics] (https://tradingeconomics.com/united-states/inflation-cpi)
 
 #st.subheader('Tingkat Inflasi AS')
@@ -67,7 +67,7 @@ c3, c4 = st.columns([2,1])
 with c3:
    df2 = pd.read_excel('./DataInflasiIND.xlsx')
    fig2 = px.line(df2, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig2.update_layout(title = 'Suku Bunga Acuan BI & Tingkat Inflasi di Indonesia', xaxis_title='Tahun', yaxis_title='Persentase (%)')
+   fig2.update_layout(title = 'Suku Bunga Acuan BI & Tingkat Inflasi di Indonesia', title_font_size = 20, paper_bgcolor = "#e4e4e4" xaxis_title='Tahun', yaxis_title='Persentase (%)')
    fig2.show()
    st.plotly_chart(fig2, use_container_width=True)
    st.caption("<p style='text-align: center;'>sumber :Bank Indonesia</p>", unsafe_allow_html=True)
