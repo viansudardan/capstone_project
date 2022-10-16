@@ -38,7 +38,7 @@ with c2:
    st.markdown("<body style='border-radius: 6px; box-shadow : 0 1px 4px rgba(0,0,0,.23);></body>", unsafe_allow_html=True)
    df = pd.read_excel('./DataInflasiAS.xlsx')
    fig = px.line(df, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2" ,xaxis_title='Tahun', yaxis_title='Persentase (%)')
+   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2", xaxis_title='Tahun', yaxis_title='Persentase (%)')
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Tradingeconomics</p>", unsafe_allow_html=True)
@@ -92,9 +92,51 @@ with c6:
    #st.plotly_chart(fig3, use_container_width=True)
    #st.caption("<p style='text-align: center;'>sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
+   #load dataset
    df3 = pd.read_csv('./open_rate.csv')
+   df4 = pd.read_csv('./union_currency.csv')
+
+   #create figure
+   #fig3 = go.Figure()
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-   fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+
+
+   #update plot sizing
+   fig3.update_layout(
+    #width=800,
+    #height=900,
+    autosize=False,
+    margin=dict(t=0, b=0, l=0, r=0),
+    template="plotly_white",
+   )
+
+   #add dropdown
+   fig3.update_layout(
+      updatemenus=[
+            dict(
+               buttons=list([
+                  dict(
+                    args=["type", "Kurs"],
+                    label="Kurs",
+                    method="restyle"
+                  ),
+                  dict(
+                    args=["type", "Valuasi"],
+                    label="Valuasi",
+                    method="restyle"
+                  )
+               ]),
+               direction="down",
+               pad={"r": 10, "t": 10},
+               showactive=True,
+               x=0.1,
+               xanchor="left",
+               y=1.1,
+               yanchor="top"
+            ),
+      ]
+   )
+   fig3.update_layout(title = 'Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    option = st.selectbox(
       "Melihat Nilai",
       ('Kurs', 'Valuasi')
