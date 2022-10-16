@@ -198,8 +198,8 @@ with c6:
    )
 
    #fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
-   fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-   fig3.show()
+   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   #fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
