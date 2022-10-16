@@ -1,6 +1,8 @@
+from turtle import color
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 #import colorama as init
 #from colorama import init
 #from termcolor import colored
@@ -97,15 +99,15 @@ with c6:
    df4 = pd.read_csv('./union_currency.csv')
 
    #create figure
-   #fig3 = go.Figure()
-   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   fig3 = go.Figure()
+   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
 
 
    #update plot sizing
    fig3.update_layout(
     #width=800,
     #height=900,
-    autosize=False,
+    #autosize=False,
     #margin=dict(t=0, b=0, l=0, r=0),
     template="plotly_white",
    )
@@ -136,7 +138,7 @@ with c6:
             ),
       ]
    )
-   fig3.update_layout(title = 'Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, paper_bgcolor = "#b7d2e8", xaxis_title='Periode', yaxis_title='Nilai')
+   fig3.update_layout(title = 'Nilai Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
    st.plotly_chart(fig3)
