@@ -99,8 +99,8 @@ with c6:
    #df4 = pd.read_csv('./union_currency.csv')
 
    #2.initialize figure
-   fig3 = go.Figure()
-   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   #fig3 = go.Figure()
+   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
    #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
    #fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
@@ -112,14 +112,14 @@ with c6:
       go.Scatter(x=list(df3.Date), 
               y=list(df3.decrease_price),
               name="Valuasi",
-              color='Currency'
+              #color='Currency'
               #line=dict(color="#33CFA5")
               ))
    fig3.add_trace(
       go.Scatter(x=list(df3.Date), 
               y=list(df3.close_price),
               name="Kurs",
-              color='Currency'
+              #color='Currency'
               #line=dict(color="#F06A6A")
               ))
 
