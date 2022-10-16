@@ -83,87 +83,23 @@ with c4:
 #sukubungaBI = df4[['Bulan', 'Suku Bunga']].set_index('Bulan')
 #st.line_chart(sukubungaBI)
 
-c5, c6 = st.columns([1,2])
+st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global meninggalkan negara-negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia. Hal ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September 2022 adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
+
+c5, c6 = st.columns([1,1])
 with c5:
-   st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global meninggalkan negara-negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia. Hal ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September 2022 adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
-with c6:   
    df3 = pd.read_csv('./open_rate.csv')
-   Lihat_Kurs = st.checkbox("Klik untuk Melihat Nilai Kurs Dollar AS Terhadap Mata Uang Lainnya", value = False)
-   if Lihat_Kurs:
-      fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
-      fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-      fig3.show(),
-      st.plotly_chart(fig3, use_container_width=True)
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
-   fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-   fig3.show(),
+   #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
+   fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
-   
-   #Lihat_Kurs = st.checkbox("Klik untuk Melihat Nilai Kurs Dollar AS Terhadap Mata Uang Lainnya")
-   #if Lihat_Kurs:
-      #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
-      #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
-      #fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-      #fig3.show(),
-      #st.plotly_chart(fig3, use_container_width=True),
-   #elif Nilai == "Kurs":
-      #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
-  #       fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
-  #       fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-  #       fig3.show(),
-  #       st.plotly_chart(fig3, use_container_width=True)
-
-   #fig4 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
-   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
-   #fig3.show()
-   #st.plotly_chart(fig3, use_container_width=True)
-
-   #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
-
-   #3.add traces
-   #fig3.add_trace(
-   #   go.Scatter(x=list(df3.Date), 
-   #              y=list(df3.decrease_price),
-   #              mode ="markers"
-   #              marker=dict(color='')
-   #           name="Valuasi",
-               #color='Negara'
-   #           #line=dict(color="#33CFA5")
-   #           ))
-   #fig3.add_trace(
-   #   go.Scatter(x=list(df3.Date), 
-   #              y=list(df3.close_price),
-   #           name="Kurs",
-              #color='Negara'
-              #line=dict(color="#F06A6A")
-   #           ))
-
-   #update plot sizing
-   #fig3.update_layout(
-    #width=800,
-    #height=900,
-    #color = "white",
-    #autosize=False,
-    #margin=dict(t=5, b=5, l=1, r=1),
-    #template="plotly_white",)
-
-   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
-   
-   #4.add line
-   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
-   #fig3.show()
-   #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
-   #fig3.show()
-   #st.plotly_chart(fig3, use_container_width=True)
-   #st.plotly_chart(fig3)
-
-   #tickerSymbol = st.radio("Pick Stock",["GOOGL", "AAPL"])
-   #tickerSymbol_text = st.text_input("Enter Ticker")
-   #ickerData = yf.Ticker(tickerSymbol_text)
-   #select_period = st.select_slider("Select Period", ["1d", "5d","1mo"])
-   #tickerDF = tickerData.history(period = select_period)
-   st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
+with c6:   
+   df4 = pd.read_csv('./union_currency.csv')
+   fig4 = px.line(df4, x='Date', y='close_price', markers=False, color='Negara')
+   fig4.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig4.show()
+   st.plotly_chart(fig4, use_container_width=True)
+st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
    #df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
    #fig3 = px.line(df3, x='Tanggal', y='Kurs Jual', markers=True)
