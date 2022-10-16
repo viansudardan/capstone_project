@@ -43,6 +43,7 @@ with c5:
 with c6: 
    #load dataset
    df3 = pd.read_csv('./ind_rate.csv')
+   df4 = pd.read_csv('./jpy_rate.csv')
    #fig3 = px.line(df3, x='Date', y='close_price', markers=False)
    #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    #fig3.show()
@@ -69,13 +70,26 @@ with c6:
                  name="Indonesia",
                  line=dict(color="#33CFA5")
               ))
+   fig3.add_trace(
+      go.Scatter(x=list(df4.Date), 
+                 y=list(df4.decrease_price),
+                 name="Jepang",
+                 line=dict(color="#F06A6A")
+              ))
 
    fig3.add_trace(
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.close_price),
                  name="Indonesia",
+                 line=dict(color="#33CFA5")
+              ))
+   fig3.add_trace(
+      go.Scatter(x=list(df4.Date), 
+                 y=list(df4.close_price),
+                 name="Jepang",
                  line=dict(color="#F06A6A")
               ))
+
 
    #define annotation
    dec_price = [dict(x=df3.Date,
@@ -97,12 +111,12 @@ with c6:
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
-                       args=[{"visible": [True, False]},
+                       args=[{"visible": [True, True, False, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
-                       args=[{"visible": [False, True]},
+                       args=[{"visible": [False, False, True, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
