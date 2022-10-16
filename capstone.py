@@ -139,7 +139,7 @@ with c6:
     #template="plotly_white",)
 
    #add dropdown
-   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
+   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
 
    fig3.update_layout(
       updatemenus=[
