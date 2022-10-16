@@ -44,6 +44,7 @@ with c6:
    #load dataset
    df3 = pd.read_csv('./ind_rate.csv')
    df4 = pd.read_csv('./jpy_rate.csv')
+   df5 = pd.read_csv('./gbp_rate.csv')
    #fig3 = px.line(df3, x='Date', y='close_price', markers=False)
    #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    #fig3.show()
@@ -52,7 +53,6 @@ with c6:
    #initialize figure
    fig3 = go.Figure()
 
-   
    #update plot sizing
    fig3.update_layout(
     #width=800,
@@ -76,6 +76,12 @@ with c6:
                  name="Jepang",
                  line=dict(color="#F06A6A")
               ))
+   fig3.add_trace(
+      go.Scatter(x=list(df5.Date), 
+                 y=list(df5.decrease_price),
+                 name="Inggris",
+                 line=dict(color="#F06B6B")
+              ))
 
    fig3.add_trace(
       go.Scatter(x=list(df3.Date), 
@@ -88,6 +94,12 @@ with c6:
                  y=list(df4.close_price),
                  name="Jepang",
                  line=dict(color="#F06A6A")
+              ))
+   fig3.add_trace(
+      go.Scatter(x=list(df5.Date), 
+                 y=list(df5.close_price),
+                 name="Inggris",
+                 line=dict(color="#F06B6B")
               ))
 
 
