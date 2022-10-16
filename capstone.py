@@ -98,9 +98,9 @@ with c6:
                direction="down",
                pad={"r": 10, "t": 10},
                showactive=True,
-               #x=5,
+               x=0,
                xanchor="left",
-               #y=5,
+               y=0,
                yanchor="top",
               ),
       ]
