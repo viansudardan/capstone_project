@@ -1,4 +1,4 @@
-"Date","close_price","Currency","open_price","decrease_price"
+"Date,""close_price"",""Negara"",""open_price"",""decrease_price"""
 2021-10-15 00:00:00.000,1.348836,Australia,1.348836,0.0
 2021-10-18 00:00:00.000,1.34684,Australia,1.348836,0.0019959999999998868
 2021-10-19 00:00:00.000,1.348254,Australia,1.348836,0.0005819999999999
