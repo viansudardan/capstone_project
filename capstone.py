@@ -168,12 +168,12 @@ with c6:
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
-                       args=[#{"visible": [True, False]},
+                       args=[{"visible": [True, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
-                       args=[#{"visible": [False, True]},
+                       args=[{"visible": [False, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
@@ -199,7 +199,7 @@ with c6:
    
    fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
-   st.plotly_chart(fig3, use_container_width=True)
+   st.plotly_chart(fig3)
 
 
    #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
