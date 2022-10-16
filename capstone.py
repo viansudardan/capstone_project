@@ -109,20 +109,20 @@ with c6:
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #3.add traces
-   fig3.add_trace(
-      go.Scatter(x=list(df3.Date), 
-              y=list(df3.decrease_price),
+   #fig3.add_trace(
+   #   go.Scatter(x=list(df3.Date), 
+   #              y=list(df3.decrease_price),
    #           name="Valuasi",
-               color='Negara'
+               #color='Negara'
    #           #line=dict(color="#33CFA5")
-              ))
-   fig3.add_trace(
-      go.Scatter(x=list(df3.Date), 
-              y=list(df3.close_price),
+   #           ))
+   #fig3.add_trace(
+   #   go.Scatter(x=list(df3.Date), 
+   #              y=list(df3.close_price),
    #           name="Kurs",
-              color='Negara'
+              #color='Negara'
               #line=dict(color="#F06A6A")
-              ))
+   #           ))
 
    #Nilai = st.radio("",('Valuasi', 'Kurs'), key=None, help=None)
    #if Nilai == "Valuasi":
