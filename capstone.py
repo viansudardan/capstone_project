@@ -7,7 +7,7 @@ import plotly.express as px
 #from colorama import init
 #from termcolor import colored
 import yfinance as yf
-from dash import Dash, dcc
+#from dash import Dash, dcc
 #import fontstyle as tx
 #import matplotlib.pyplot as plt
 #import shape
