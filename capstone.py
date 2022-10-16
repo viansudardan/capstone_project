@@ -99,8 +99,8 @@ with c6:
    #df4 = pd.read_csv('./union_currency.csv')
 
    #2.initialize figure
-   #fig3 = go.Figure()
-   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
+   fig3 = go.Figure()
+   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
    #fig4 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
    #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
    #fig3.show()
