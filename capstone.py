@@ -178,12 +178,12 @@ with c6:
                         "annotations": cl_price}]), 
                ]),
                direction="down",
-               pad={"r": 20, "t": 20},
+               pad={"r": 10, "t": 10},
                #color="white",
                #showactive=True,
-               #x=0.1,
+               x=-5,
                xanchor="left",
-               #y=1.1,
+               y=-5,
                yanchor="top"
               ),
       ]
