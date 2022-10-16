@@ -103,16 +103,18 @@ with c6:
    #fig3 = px.line(df3)
    #fig3 = go.figure()
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
+   fig3.show()
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #add traces
    fig3.add_trace(
-      px.Scatter(x=list(df3.Date),
+      px.line(x=list(df3.Date),
                  y=list(df.decrease_price),
                name="Valuasi",
                line=dict(color="#33CFA5")))
    fig.add_trace(
-      px.Scatter(x=list(df.Date),
+      px.line(x=list(df.Date),
                y=list(df.close_price),
                name="Kurs",
                line=dict(color="#F06A6A")))
@@ -180,7 +182,7 @@ with c6:
 
    #df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
    #fig3 = px.line(df3, x='Tanggal', y='Kurs Jual', markers=True)
-   #ig3.update_layout(title = 'Kurs Dollar AS Terhadap Mata Uang Dunia', xaxis_title='Tanggal', yaxis_title='Nilai Kurs')
+   #fig3.update_layout(title = 'Kurs Dollar AS Terhadap Mata Uang Dunia', xaxis_title='Tanggal', yaxis_title='Nilai Kurs')
    #fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
    #st.caption("<p style='text-align: center;'>Sumber : Bank Indonesia</p>", unsafe_allow_html=True)
