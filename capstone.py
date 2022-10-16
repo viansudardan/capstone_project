@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 #from colorama import init
 #from termcolor import colored
 import yfinance as yf
-from dash import Dash, dcc, html, Input, Output
+#from dash import Dash, dcc, html, Input, Output
 #import fontstyle as tx
 #import matplotlib.pyplot as plt
 #import shape
@@ -86,31 +86,7 @@ with c4:
 c5, c6 = st.columns([1,2])
 with c5:
    st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global meninggalkan negara-negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia. Hal ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September 2022 adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
-with c6:
-   app = Dash(__name__)
-   app.layout = html.Div([
-      html.H4('Mata Uang Dollar AS Terhadap Mata Uang Dunia'),
-      dcc.Graph(id="graph"),
-      dcc.Checklist(
-         id="checklist",
-         options=["Valuasi", "Kurs"],
-         value=["Valuasi", "Kurs"],
-         inline=True
-      ),
-   ])
-
-   @app.callback(
-      Output("graph", "figure"), 
-      Input("checklist", "value"))
-   def update_line_chart(Currency):
-      df3 = pd.read_csv('./open_rate.csv')
-      #mask = df3.continent.isin(continents)
-      fig3 = px.line(df3, 
-         x="Date", y="decrease_price", color='Currency')
-      return fig3
-
-   app.run_server(debug=True)
-   
+with c6:   
    #df3 = pd.read_csv('./union_currency.csv')
    #fig3 = px.line(df3, x='Date', y='Close', markers=False, color='Currency')
    #fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
@@ -119,14 +95,14 @@ with c6:
    #st.caption("<p style='text-align: center;'>sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
    #1.load dataset
-   #df3 = pd.read_csv('./open_rate.csv')
+   df3 = pd.read_csv('./open_rate.csv')
    #df4 = pd.read_csv('./union_currency.csv')
 
    #2.initialize figure
    #fig3 = go.Figure()
-   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
-   #fig3.show()
+   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
+   fig3.show()
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #3.add traces
