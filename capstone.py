@@ -109,12 +109,12 @@ with c6:
 
    #add traces
    fig3.add_trace(
-      go.scatter(x=list(df3.Date), 
+      go.Scatter(x=list(df3.Date), 
               y=list(df3.decrease_price),
               name="Valuasi",
               line=dict(color="#33CFA5")))
    fig.add_trace(
-      go.scatter(x=list(df3.Date), 
+      go.Scatter(x=list(df3.Date), 
               y=list(df3.close_price),
               name="Kurs",
               line=dict(color="#F06A6A")))
