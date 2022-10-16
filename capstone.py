@@ -49,11 +49,11 @@ with c6:
    df7 = pd.read_csv('./aud_rate.csv')
    df8 = pd.read_csv('./cny_rate.csv')
    df9 = pd.read_csv('./chf_rate.csv')
-   df10 = pd.read_csv('./open_rate.csv')
-   fig3 = px.line(df10, x='Date', y='close_price', markers=False)
-   fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-   fig3.show()
-   st.plotly_chart(fig3, use_container_width=True)
+   #df10 = pd.read_csv('./open_rate.csv')
+   #fig3 = px.line(df10, x='Date', y='close_price', markers=False)
+   #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   #fig3.show()
+   #st.plotly_chart(fig3, use_container_width=True)
    
    #initialize figure
    fig3 = go.Figure()
@@ -158,13 +158,13 @@ with c6:
 
 
    #define annotation
-   dec_price = [dict(x=df4.Date,
-                     y=df4.decrease_price,
-                     #xref="x", yref="y"
+   dec_price = [dict(x=df9.Date,
+                     y=df9.decrease_price,
+                     xref="x", yref="y"
                      )]
-   cl_price = [dict(x=df4.Date,
-                    y=df4.close_price,
-                    #xref="x", yref="y"
+   cl_price = [dict(x=df9.Date,
+                    y=df9.close_price,
+                    xref="x", yref="y"
                     )]
    #add dropdown
    fig3.update_layout(
@@ -189,10 +189,11 @@ with c6:
                direction="down",
                pad={"r": 10, "t": 10},
                showactive=True,
-               #x=0,
-               xanchor="left",
-               #y=10,
-               yanchor="bottom"
+               showarrow=False,
+               x=0,
+               #xanchor="left",
+               y=1.085
+               #yanchor="bottom"
               ),
       ]
    )
