@@ -147,6 +147,13 @@ with c6:
    #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
    #fig3.show()
 
+   #4b. define annotations
+   dec_price = [dict(x=df3.Date,
+                     y=df3.decrease_price,
+                     xref="x", yref="y")]
+   cl_price = [dict(x=df3.Date,
+                     y=df3.close_price,
+                     xref="x", yref="y")]
    #5.add dropdown
    fig3.update_layout(
       updatemenus=[
@@ -157,14 +164,14 @@ with c6:
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
-                       args=[{"type": "Valuasi"},
+                       args=[{"visible": [True, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
-                        }]), 
+                        "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
-                       args=[{"type": "Kurs"},
+                       args=[{"visible": [False, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
-                        }]), 
+                        "annotations": cl_price}]), 
                ]),
               direction="down",
                pad={"r": 10, "t": 10},
@@ -179,12 +186,12 @@ with c6:
    )
 
    #6. add annotation
-   fig3.update_layout(
-    annotations=[
-        dict(text="Nilai:", showarrow=False,
-        x=0, y=1.085, yref="paper", align="left")
-    ]
-   )
+   #fig3.update_layout(
+   #  annotations=[
+   #     dict(text="Nilai:", showarrow=False,
+   #     x=0, y=1.085, yref="paper", align="left")
+   # ]
+   #)
    
    fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
