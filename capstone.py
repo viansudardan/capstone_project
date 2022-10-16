@@ -136,7 +136,7 @@ with c6:
             ),
       ]
    )
-   fig3.update_layout(title = 'Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig3.update_layout(title = 'Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, xaxis_title='Tanggal', yaxis_title='Nilai')
    option = st.selectbox(
       "Melihat Nilai",
       ('Kurs', 'Valuasi')
