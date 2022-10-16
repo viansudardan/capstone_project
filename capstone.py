@@ -2,7 +2,7 @@ from turtle import color
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
 #import colorama as init
 #from colorama import init
 #from termcolor import colored
@@ -43,7 +43,7 @@ with c2:
    fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2", xaxis_title='Periode', yaxis_title='Persentase (%)')
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
-   st.caption("<p style='text-align: center;'>Sumber : Tradingeconomics</p>", unsafe_allow_html=True)
+   st.caption("<p style='text-align: center;'>Sumber : Trading Economics</p>", unsafe_allow_html=True)
 #Made with **streamlit** by [tradingeconomics] (https://tradingeconomics.com/united-states/inflation-cpi)
 
 #st.subheader('Tingkat Inflasi AS')
@@ -98,16 +98,16 @@ with c6:
    df3 = pd.read_csv('./open_rate.csv')
    df4 = pd.read_csv('./union_currency.csv')
 
-   #create figure
-   fig3 = go.Figure()
-   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-
+   #initialize figure
+   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #update plot sizing
    fig3.update_layout(
     #width=800,
     #height=900,
-    #autosize=False,
+    color = "white",
+    autosize=False,
     #margin=dict(t=0, b=0, l=0, r=0),
     template="plotly_white",
    )
