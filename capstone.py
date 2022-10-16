@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
 #import colorama as init
 #from colorama import init
 #from termcolor import colored
@@ -100,18 +100,18 @@ with c6:
    #df4 = pd.read_csv('./union_currency.csv')
 
    #initialize figure
-   fig3 = go.figure()
+   fig3 = px.figure()
    #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #add traces
    fig3.add_trace(
-      go.Scatter(x=list(df3.Date),
+      px.Scatter(x=list(df3.Date),
                  y=list(df.decrease_price),
                name="Valuasi",
                line=dict(color="#33CFA5")))
    fig.add_trace(
-    go.Scatter(x=list(df.Date),
+    px.Scatter(x=list(df.Date),
                y=list(df.close_price),
                name="Kurs",
                line=dict(color="#F06A6A")))
