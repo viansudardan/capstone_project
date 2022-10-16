@@ -50,7 +50,7 @@ with c6:
    df8 = pd.read_csv('./cny_rate.csv')
    df9 = pd.read_csv('./chf_rate.csv')
    df10 = pd.read_csv('./open_rate.csv')
-   fig3 = px.line(df3, x='Date', y='close_price', markers=False)
+   fig3 = px.line(df10, x='Date', y='close_price', markers=False)
    fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
