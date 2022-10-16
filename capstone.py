@@ -93,8 +93,8 @@ with c6:
    fig3.show(),
    st.plotly_chart(fig3, use_container_width=True)
    
-   Lihat_Kurs = st.checkbox("Klik untuk Melihat Nilai Kurs Dollar AS Terhadap Mata Uang Lainnya")
-   if Lihat_Kurs:
+   #Lihat_Kurs = st.checkbox("Klik untuk Melihat Nilai Kurs Dollar AS Terhadap Mata Uang Lainnya")
+   #if Lihat_Kurs:
       #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
       #fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
@@ -102,10 +102,10 @@ with c6:
       #st.plotly_chart(fig3, use_container_width=True),
    #elif Nilai == "Kurs":
       #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
-      fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
-      fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-      fig3.show(),
-      st.plotly_chart(fig3, use_container_width=True)
+  #       fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
+  #       fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+  #       fig3.show(),
+  #       st.plotly_chart(fig3, use_container_width=True)
 
    #fig4 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
    #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
