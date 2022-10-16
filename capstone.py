@@ -90,13 +90,13 @@ with c5:
    df3 = pd.read_csv('./open_rate.csv')
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
    #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
-   fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig3.update_layout(title = 'Valuasi Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
 with c6:   
-   df4 = pd.read_csv('./union_currency.csv')
+   df4 = pd.read_csv('./open_rate.csv')
    fig4 = px.line(df4, x='Date', y='close_price', markers=False, color='Negara')
-   fig4.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig4.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
 st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
