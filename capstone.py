@@ -50,6 +50,17 @@ with c6:
    
    #initialize figure
    fig3 = go.Figure()
+
+   
+   #update plot sizing
+   fig3.update_layout(
+    #width=800,
+    #height=900,
+    #color = "white",
+    autosize=False,
+    margin=dict(t=5, b=5, l=1, r=1))
+    #template="plotly_white",)
+
    
    #add traces
    fig3.add_trace(
