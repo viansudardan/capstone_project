@@ -43,12 +43,25 @@ with c5:
 with c6: 
    #load dataset
    df3 = pd.read_csv('./ind_rate.csv')
+   fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
+   fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig3.show()
+   st.plotly_chart(fig3, use_container_width=True)
    
    #initialize figure
-   fig3 = go.Figure()
+   #fig3 = go.Figure()
    
    #add traces
-
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date),
+                 y=list(df3.decrease_price),
+                 name="Indonesia",
+                 line=dict(color="33CFA5")))
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date),
+                 y=list(df3.close_price),
+                 name="Indonesia",
+                 line=dict(color="#F06a6a")))
 
    #define annotation
    dec_price = [dict(x=df3.Date,
