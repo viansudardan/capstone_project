@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-#import plotly.graph_objects as go
+import plotly.graph_objects as go
 #import colorama as init
 #from colorama import init
 #from termcolor import colored
@@ -101,21 +101,21 @@ with c6:
 
    #initialize figure
    #fig3 = px.line(df3)
-   #fig3 = go.figure()
-   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
-   fig3.show()
+   fig3 = go.figure()
+   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
+   #fig3.show()
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #add traces
    fig3.add_trace(
-      px.line(df3, 
+      go.scatter(df3, 
               x='Date',
               y='decrease_price',
               name="Valuasi",
               line=dict(color="#33CFA5")))
    fig.add_trace(
-      px.line(df3, 
+      go.scatter(df3, 
               x='Date',
               y='close_price',
               name="Kurs",
@@ -141,6 +141,8 @@ with c6:
     #template="plotly_white",)
 
    #add dropdown
+   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
+
    fig3.update_layout(
       updatemenus=[
             dict(
