@@ -187,6 +187,8 @@ with c6:
    )
 
    fig3.show()
+   st.plotly_chart(fig3, use_container_width=True)
+
 
    #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    #fig3.show()
