@@ -189,11 +189,10 @@ with c6:
                direction="down",
                pad={"r": 10, "t": 10},
                showactive=True,
-               #showarrow=False,
                #x=0,
-               xanchor="left",
+               xanchor="auto",
                #y=1.085
-               yanchor="bottom"
+               yanchor="auto"
               ),
       ]
    )
