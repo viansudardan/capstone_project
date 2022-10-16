@@ -47,11 +47,62 @@ with c6:
    #initialize figure
    fig3 = go.Figure()
    
- 
+   #add traces
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date),
+                 y=list(df3.decrease_price),
+                 name="Indonesia",
+                 line=dict(color="33CFA5")))
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date),
+                 y=list(df3.close_price),
+                 name="Indonesia",
+                 line=dict(color="#F06a6a")))
+
+   #define annotation
+   dec_price = [dict(x=df3.Date,
+                     y=df3.decrease_price,
+                     xref="x", yref="y"
+                     )]
+   cl_price = [dict(x=df3.Date,
+                    y=df3.close_price,
+                    xref="x", yref="y"
+                    )]
+   #add dropdown
+   fig3.update_layout(
+      updatemenus=[
+            dict(
+               active = 0,
+               bgcolor = '#fff',
+               bordercolor = '#fff',
+               #margin=dict(t=5, b=5, l=1, r=1),
+               buttons=list([
+                  dict(label="Valuasi",
+                       method="update",
+                       args=[{"visible": [True, False]},
+                       {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
+                        "annotations": dec_price}]), 
+                  dict(label="Kurs",
+                       method="update",
+                       args=[{"visible": [False, True]},
+                       {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
+                        "annotations": cl_price}]), 
+               ]),
+               direction="down",
+               pad={"r": 10, "t": 10},
+               showactive=True,
+               #x=-5,
+               xanchor="left",
+               #y=-5,
+               yanchor="top",
+              ),
+      ]
+   )
+
    #fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
-   #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-   #fig3.show()
-   #st.plotly_chart(fig3, use_container_width=True)
+   fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig3.show()
+   st.plotly_chart(fig3, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
 st.markdown('Tingkat inflasi AS yang tinggi juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
