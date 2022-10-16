@@ -45,6 +45,7 @@ with c6:
    df3 = pd.read_csv('./ind_rate.csv')
    df4 = pd.read_csv('./jpy_rate.csv')
    df5 = pd.read_csv('./gbp_rate.csv')
+   df6 = pd.read_csv('./eur_rate.csv')
    #fig3 = px.line(df3, x='Date', y='close_price', markers=False)
    #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    #fig3.show()
@@ -80,7 +81,13 @@ with c6:
       go.Scatter(x=list(df5.Date), 
                  y=list(df5.decrease_price),
                  name="Inggris",
-                 line=dict(color="#042d6e")
+                 line=dict(color="#6155e6")
+              ))
+   fig3.add_trace(
+      go.Scatter(x=list(df6.Date), 
+                 y=list(df6.decrease_price),
+                 name="Euro",
+                 line=dict(color="#d602ed")
               ))
 
    fig3.add_trace(
@@ -99,7 +106,13 @@ with c6:
       go.Scatter(x=list(df5.Date), 
                  y=list(df5.close_price),
                  name="Inggris",
-                 line=dict(color="#042d6e")
+                 line=dict(color="#6155e6")
+              ))
+   fig3.add_trace(
+      go.Scatter(x=list(df6.Date), 
+                 y=list(df6.close_price),
+                 name="Euro",
+                 line=dict(color="#d602ed")
               ))
 
 
@@ -123,12 +136,12 @@ with c6:
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
-                       args=[{"visible": [True, True, True, False, False, False]},
+                       args=[{"visible": [True, True, True, True, False, False, False, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
-                       args=[{"visible": [False, False, False, True, True, True]},
+                       args=[{"visible": [False, False, False, False, True, True, True, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
