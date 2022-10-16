@@ -179,7 +179,7 @@ with c6:
    )
 
    #6. add annotation
-   fig.update_layout(
+   fig3.update_layout(
     annotations=[
         dict(text="Nilai:", showarrow=False,
         x=0, y=1.085, yref="paper", align="left")
