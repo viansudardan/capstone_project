@@ -88,6 +88,12 @@ with c5:
    st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global meninggalkan negara-negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia. Hal ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September 2022 adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
 with c6:   
    df3 = pd.read_csv('./open_rate.csv')
+   Lihat_Kurs = st.checkbox("Klik untuk Melihat Nilai Kurs Dollar AS Terhadap Mata Uang Lainnya")
+   if Lihat_Kurs:
+      fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
+      fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+      fig3.show(),
+      st.plotly_chart(fig3, use_container_width=True)
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
    fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    fig3.show(),
