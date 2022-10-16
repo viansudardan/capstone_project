@@ -58,7 +58,7 @@ with c6:
     #height=900,
     #color = "white",
     autosize=True,
-    margin=dict(t=8, b=8, l=8, r=8))
+    margin=dict(t=15, b=10, l=10, r=15))
     #template="plotly_white",)
 
    
