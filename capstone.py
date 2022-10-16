@@ -80,7 +80,7 @@ with c6:
       go.Scatter(x=list(df5.Date), 
                  y=list(df5.decrease_price),
                  name="Inggris",
-                 line=dict(color="#F06B6B")
+                 line=dict(color="#042d6e")
               ))
 
    fig3.add_trace(
@@ -99,7 +99,7 @@ with c6:
       go.Scatter(x=list(df5.Date), 
                  y=list(df5.close_price),
                  name="Inggris",
-                 line=dict(color="#F06B6B")
+                 line=dict(color="#042d6e")
               ))
 
 
