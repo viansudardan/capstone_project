@@ -97,7 +97,11 @@ with c6:
    fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
+   tickerSymbol = st.radio("Pick Stock",["GOOGL", "AAPL"])
+   tickerSymbol_text = st.text_input("Enter Ticker")
+   tickerData = yf.Ticker(tickerSymbol_text)
    select_period = st.select_slider("Select Period", ["1d", "5d","1mo"])
+   tickerDF = tickerData.history(period = select_period)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
    #df3 = pd.read_excel('./Kurs_Rupiah.xlsx')
