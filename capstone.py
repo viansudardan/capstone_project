@@ -118,18 +118,19 @@ with c6:
             dict(
                buttons=list([
                   dict(
-                    args=["type", "Kurs"],
-                    label="Kurs",
+                    args=["type", "Valuasi"],
+                    label="Valuasi",
                     method="restyle"
                   ),
                   dict(
-                    args=["type", "Valuasi"],
-                    label="Valuasi",
+                    args=["type", "Kurs"],
+                    label="Kurs",
                     method="restyle"
                   )
                ]),
                direction="down",
                pad={"r": 10, "t": 10},
+               color="white",
                showactive=True,
                #x=0.1,
                #xanchor="left",
