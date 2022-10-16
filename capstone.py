@@ -108,7 +108,7 @@ with c6:
       go.Scatter(x=list(df9.Date), 
                  y=list(df9.decrease_price),
                  name="Swiss",
-                 line=dict(color="#fcfcca")
+                 line=dict(color="#f5f507")
               ))
 
    #Figure Kurs
@@ -152,7 +152,7 @@ with c6:
       go.Scatter(x=list(df9.Date), 
                  y=list(df9.close_price),
                  name="Swiss",
-                 line=dict(color="#fcfcca")
+                 line=dict(color="#f5f507")
               ))
 
 
