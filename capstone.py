@@ -91,14 +91,14 @@ with c6:
    #fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
    #st.caption("<p style='text-align: center;'>sumber : Yahoo Finance</p>", unsafe_allow_html=True)
-   option = st.selectbox(
-      "Melihat Nilai",
-      ('Kurs', 'Valuasi')
-      )
 
    df3 = pd.read_csv('./open_rate.csv')
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
    fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
+   option = st.selectbox(
+      "Melihat Nilai",
+      ('Kurs', 'Valuasi')
+      )
    fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
    tickerSymbol = st.radio("Pick Stock",["GOOGL", "AAPL"])
