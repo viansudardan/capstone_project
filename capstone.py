@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-#import plotly.graph_objects as go
+import plotly.graph_objects as go
 #import colorama as init
 #from colorama import init
 #from termcolor import colored
@@ -97,22 +97,36 @@ with c6:
 
    #load dataset
    df3 = pd.read_csv('./open_rate.csv')
-   df4 = pd.read_csv('./union_currency.csv')
+   #df4 = pd.read_csv('./union_currency.csv')
 
    #initialize figure
-   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-   fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
+   fig3 = go.figure()
+   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
+
+   #add traces
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date),
+                 y=list(df.decrease_price),
+               name="Valuasi",
+               line=dict(color="#33CFA5")))
+   fig.add_trace(
+    go.Scatter(x=list(df.Date),
+               y=list(df.close_price),
+               name="Kurs",
+               line=dict(color="#F06A6A")))
 
 
-   Nilai = st.radio("",('Valuasi', 'Kurs'), key=None, help=None)
-   if Nilai == "Valuasi":
-      fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
-      fig3.show(),
-      #st.plotly_chart(fig3, use_container_width=True),
-   elif Nilai == "Kurs":
-      fig4.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
-      fig4.show(),
-      #st.plotly_chart(fig4, use_container_width=True),
+
+   #Nilai = st.radio("",('Valuasi', 'Kurs'), key=None, help=None)
+   #if Nilai == "Valuasi":
+   #   fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
+   #   fig3.show(),
+   #   #st.plotly_chart(fig3, use_container_width=True),
+   #elif Nilai == "Kurs":
+   #   fig4.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
+   #   fig4.show(),
+   #   #st.plotly_chart(fig4, use_container_width=True),
 
    #update plot sizing
    #fig3.update_layout(
@@ -124,36 +138,35 @@ with c6:
     #template="plotly_white",)
 
    #add dropdown
-   #fig3.update_layout(
-   #   updatemenus=[
-   #         dict(
-   #            buttons=list([
-   #               
-   #               st.plotly_chart(fig3, use_container_width=True),
-   #               dict(
-   #                  args=["type", "Valuasi"],
-   #                  label="Valuasi",
-   #                  method="restyle",
-   #               ),
-   #               fig4.show(),
-   #               st.plotly_chart(fig4, use_container_width=True),
-   #               dict(
-   #                 args=["type", "Kurs"],
-   #                 label="Kurs",
-   #                 method="restyle"
-   #               )
-   #            ]),
-   #            direction="down",
-   #            pad={"r": 10, "t": 10},
-   #            #color="white",
-   #            showactive=True,
-   #            #x=0.1,
-   #            #xanchor="left",
-   #            #y=1.1,
-   #            #yanchor="top"
-   #         ),
-   #   ]
-   #)
+   fig3.update_layout(
+      updatemenus=[
+            dict(
+               active = 0,
+               bgcolor = '#fff',
+               bordercolor = '#fff',
+               buttons=list([
+                  dict(label="Valuasi",
+                       method="update",
+                       args=[{"visible": [True,False]},
+                       {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
+                        }]), 
+                  dict(label="Kurs",
+                       method="update",
+                       args=[{"visible": [False,True]},
+                       {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
+                        }]), 
+               ]),
+               direction="down",
+               pad={"r": 10, "t": 10},
+               #color="white",
+               showactive=True,
+               #x=0.1,
+               xanchor="left",
+               #y=1.1,
+               yanchor="top"
+               ),
+      ]
+   )
    #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    #fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
