@@ -137,10 +137,6 @@ with c6:
       ]
    )
    fig3.update_layout(title = 'Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, xaxis_title='Tanggal', yaxis_title='Nilai')
-   option = st.selectbox(
-      "Melihat Nilai",
-      ('Kurs', 'Valuasi')
-      )
    fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
    tickerSymbol = st.radio("Pick Stock",["GOOGL", "AAPL"])
