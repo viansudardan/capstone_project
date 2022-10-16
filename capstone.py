@@ -47,6 +47,7 @@ with c6:
    df5 = pd.read_csv('./gbp_rate.csv')
    df6 = pd.read_csv('./eur_rate.csv')
    df7 = pd.read_csv('./aud_rate.csv')
+   df8 = pd.read_csv('./cny_rate.csv')
    #fig3 = px.line(df3, x='Date', y='close_price', markers=False)
    #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    #fig3.show()
@@ -57,14 +58,13 @@ with c6:
 
    #update plot sizing
    fig3.update_layout(
+      autosize=True)
     #width=800,
     #height=900,
     #color = "white",
-    autosize=True)
     #margin=dict(t=15, b=10, l=10, r=15))
     #template="plotly_white",)
 
-   
    #add traces
    #Figure Valuasi
    fig3.add_trace(
@@ -96,6 +96,12 @@ with c6:
                  y=list(df7.decrease_price),
                  name="Australia",
                  line=dict(color="#02ede5")
+              ))
+   fig3.add_trace(
+      go.Scatter(x=list(df8.Date), 
+                 y=list(df8.decrease_price),
+                 name="China",
+                 line=dict(color="#fa0202")
               ))
 
    #Figure Kurs
@@ -129,6 +135,12 @@ with c6:
                  name="Australia",
                  line=dict(color="#02ede5")
               ))
+   fig3.add_trace(
+      go.Scatter(x=list(df8.Date), 
+                 y=list(df8.close_price),
+                 name="China",
+                 line=dict(color="#fa0202")
+              ))
 
 
    #define annotation
@@ -151,12 +163,12 @@ with c6:
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
-                       args=[{"visible": [True, True, True, True, True, False, False, False, False, False]},
+                       args=[{"visible": [True, True, True, True, True, True, False, False, False, False, False, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
-                       args=[{"visible": [False, False, False, False, False, True, True, True, True, True]},
+                       args=[{"visible": [False, False, False, False, False, False, True, True, True, True, True, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
