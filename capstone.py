@@ -100,7 +100,7 @@ with c6:
 
    #2.initialize figure
    #fig3 = go.Figure()
-   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
    #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
    #fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
@@ -152,10 +152,12 @@ with c6:
    #4b. define annotations
    dec_price = [dict(x=df3.Date,
                      y=df3.decrease_price,
-                     xref="x", yref="y")]
+                     #xref="x", yref="y"
+                     )]
    cl_price = [dict(x=df3.Date,
                      y=df3.close_price,
-                     xref="x", yref="y")]
+                     #xref="x", yref="y"
+                     )]
    #5.add dropdown
    fig3.update_layout(
       updatemenus=[
@@ -175,13 +177,13 @@ with c6:
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
-              direction="down",
+               direction="down",
                pad={"r": 10, "t": 10},
                #color="white",
                showactive=True,
-               x=0.1,
+               #x=0.1,
                xanchor="left",
-               y=1.1,
+               #y=1.1,
                yanchor="top"
               ),
       ]
