@@ -43,21 +43,22 @@ with c5:
 with c6: 
    #load dataset
    df3 = pd.read_csv('./ind_rate.csv')
+   
    #initialize figure
    fig3 = go.Figure()
+   
    #add traces
    fig3.add_trace(
       go.Scatter(x=list(df3.Date),
-      y=list(df3.decrease_price),
-      name="Indonesia",
-      line=dict(color="33CFA5"))
-   )
+                 y=list(df3.decrease_price),
+                 name="Indonesia",
+                 line=dict(color="33CFA5")))
    fig3.add_trace(
       go.Scatter(x=list(df3.Date),
-      y=list(df3.close_price),
-      name="Indonesia",
-      line=dict(color="#F06a6a"))
-   )
+                 y=list(df3.close_price),
+                 name="Indonesia",
+                 line=dict(color="#F06a6a")))
+
    #define annotation
    dec_price = [dict(x=df3.Date,
                      y=df3.decrease_price,
@@ -79,12 +80,12 @@ with c6:
                   dict(label="Valuasi",
                        method="update",
                        args=[{"visible": [True, False]},
-                       {#"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
+                       {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
                        args=[{"visible": [False, True]},
-                       {#"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
+                       {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
                direction="down",
