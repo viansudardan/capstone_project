@@ -130,7 +130,7 @@ with c6:
                ]),
                direction="down",
                pad={"r": 10, "t": 10},
-               color="white",
+               #color="white",
                showactive=True,
                #x=0.1,
                #xanchor="left",
