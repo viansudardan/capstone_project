@@ -101,8 +101,9 @@ with c6:
    #2.initialize figure
    #fig3 = go.Figure()
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
-   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
-   fig3.show()
+   fig4 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
+   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
+   #fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
 
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
@@ -150,14 +151,14 @@ with c6:
    #fig3.show()
 
    #4b. define annotations
-   dec_price = [dict(x=df3.Date,
-                     y=df3.decrease_price
-                     #xref="x", yref="y"
-                     )]
-   cl_price = [dict(x=df3.Date,
-                     y=df3.close_price
-                     #xref="x", yref="y"
-                     )]
+   #dec_price = [dict(x=df3.Date,
+   #                  y=df3.decrease_price
+   #                  #xref="x", yref="y"
+   #                  )]
+   #cl_price = [dict(x=df3.Date,
+   #                  y=df3.close_price
+   #                  #xref="x", yref="y"
+   #                  )]
    #5.add dropdown
    fig3.update_layout(
       updatemenus=[
@@ -170,12 +171,12 @@ with c6:
                        method="update",
                        args=[{"visible": [True, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
-                        "annotations": dec_price}]), 
+                        "annotations": fig3}]), 
                   dict(label="Kurs",
                        method="update",
                        args=[{"visible": [False, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
-                        "annotations": cl_price}]), 
+                        "annotations": fig4}]), 
                ]),
                direction="down",
                pad={"r": 10, "t": 10},
@@ -197,9 +198,9 @@ with c6:
    # ]
    #)
    
-   #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
+   fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
-   #st.plotly_chart(fig3)
+   st.plotly_chart(fig3)
 
 
    #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
