@@ -160,11 +160,11 @@ with c6:
    #define annotation
    dec_price = [dict(x=df9.Date,
                      y=df9.decrease_price,
-                     xref="x", yref="y"
+                     #xref="x", yref="y"
                      )]
    cl_price = [dict(x=df9.Date,
                     y=df9.close_price,
-                    xref="x", yref="y"
+                    #xref="x", yref="y"
                     )]
    #add dropdown
    fig3.update_layout(
@@ -191,9 +191,9 @@ with c6:
                showactive=True,
                showarrow=False,
                #x=0,
-               #xanchor="left",
+               xanchor="left",
                #y=1.085
-               #yanchor="bottom"
+               yanchor="bottom"
               ),
       ]
    )
