@@ -108,11 +108,11 @@ with c6:
    if Nilai == "Valuasi":
       fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       fig3.show(),
-      st.plotly_chart(fig3, use_container_width=True),
+      #st.plotly_chart(fig3, use_container_width=True),
    else:
       #fig4.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       fig4.show(),
-      st.plotly_chart(fig4, use_container_width=True),
+      #st.plotly_chart(fig4, use_container_width=True),
 
    #update plot sizing
    #fig3.update_layout(
