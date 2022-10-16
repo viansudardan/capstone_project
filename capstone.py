@@ -99,27 +99,27 @@ with c6:
    #df4 = pd.read_csv('./union_currency.csv')
 
    #2.initialize figure
-   #fig3 = go.Figure()
-   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
-   fig3.show()
-   st.plotly_chart(fig3, use_container_width=True)
+   fig3 = go.Figure()
+   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
+   #fig3.show()
+   #st.plotly_chart(fig3, use_container_width=True)
 
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #3.add traces
-   #fig3.add_trace(
-   #   go.Scatter(x=list(df3.Date), 
-   #           y=list(df3.decrease_price),
-   #           name="Valuasi",
-   #           #line=dict(color="#33CFA5")
-   #           ))
-   #fig.add_trace(
-   #   go.Scatter(x=list(df3.Date), 
-   #           y=list(df3.close_price),
-   #           name="Kurs",
-   #           #line=dict(color="#F06A6A")
-   #           ))
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date), 
+              y=list(df3.decrease_price),
+              name="Valuasi",
+              #line=dict(color="#33CFA5")
+              ))
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date), 
+              y=list(df3.close_price),
+              name="Kurs",
+              #line=dict(color="#F06A6A")
+              ))
 
    #Nilai = st.radio("",('Valuasi', 'Kurs'), key=None, help=None)
    #if Nilai == "Valuasi":
@@ -148,35 +148,46 @@ with c6:
    #fig3.show()
 
    #5.add dropdown
-   #fig3.update_layout(
-   #   updatemenus=[
-   #         dict(
-   #            active = 0,
-   #            bgcolor = '#fff',
-   #            bordercolor = '#fff',
-   #            buttons=list([
-   #               dict(label="Valuasi",
-   #                    method="update",
-   #                    args=[{"type": "Valuasi"},
-   #                    {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
-   #                     }]), 
-   #               dict(label="Kurs",
-   #                    method="update",
-   #                    args=[{"type": "Kurs"},
-   #                    {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
-   #                     }]), 
-   #            ]),
-   #           direction="down",
-   #            pad={"r": 10, "t": 10},
-   #            #color="white",
-   #            showactive=True,
-   #            #x=0.1,
-   #            xanchor="left",
-   #            #y=1.1,
-   #            yanchor="top"
-   #           ),
-   #   ]
-   #)
+   fig3.update_layout(
+      updatemenus=[
+            dict(
+               active = 0,
+               bgcolor = '#fff',
+               bordercolor = '#fff',
+               buttons=list([
+                  dict(label="Valuasi",
+                       method="update",
+                       args=[{"type": "Valuasi"},
+                       {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
+                        }]), 
+                  dict(label="Kurs",
+                       method="update",
+                       args=[{"type": "Kurs"},
+                       {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
+                        }]), 
+               ]),
+              direction="down",
+               pad={"r": 10, "t": 10},
+               #color="white",
+               showactive=True,
+               #x=0.1,
+               xanchor="left",
+               #y=1.1,
+               yanchor="top"
+              ),
+      ]
+   )
+
+   #6. add annotation
+   fig.update_layout(
+    annotations=[
+        dict(text="Nilai:", showarrow=False,
+        x=0, y=1.085, yref="paper", align="left")
+    ]
+   )
+
+   fig3.show()
+
    #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    #fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
