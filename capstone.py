@@ -185,7 +185,8 @@ with c6:
                #x=-5,
                xanchor="left",
                #y=-5,
-               yanchor="top"
+               yanchor="top",
+               margin=dict(t=5, b=5, l=1, r=1),
               ),
       ]
    )
@@ -201,6 +202,7 @@ with c6:
    fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
    st.plotly_chart(fig3)
+     
 
 
    #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
