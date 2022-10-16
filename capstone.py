@@ -148,10 +148,10 @@ with c6:
                direction="down",
                pad={"r": 10, "t": 10},
                showactive=True,
-               #x=0,
-               xanchor="left",
-               #y=5,
-               yanchor="top",
+               x=0,
+               #xanchor="left",
+               y=10,
+               #yanchor="top",
               ),
       ]
    )
