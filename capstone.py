@@ -151,11 +151,11 @@ with c6:
 
    #4b. define annotations
    dec_price = [dict(x=df3.Date,
-                     y=df3.decrease_price,
+                     y=df3.decrease_price
                      #xref="x", yref="y"
                      )]
    cl_price = [dict(x=df3.Date,
-                     y=df3.close_price,
+                     y=df3.close_price
                      #xref="x", yref="y"
                      )]
    #5.add dropdown
