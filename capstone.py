@@ -92,13 +92,13 @@ with c6:
 
 
    #define annotation
-   dec_price = [dict(x=df3.Date,
-                     y=df3.decrease_price,
-                     xref="x", yref="y"
+   dec_price = [dict(x=df4.Date,
+                     y=df4.decrease_price,
+                     #xref="x", yref="y"
                      )]
-   cl_price = [dict(x=df3.Date,
-                    y=df3.close_price,
-                    xref="x", yref="y"
+   cl_price = [dict(x=df4.Date,
+                    y=df4.close_price,
+                    #xref="x", yref="y"
                     )]
    #add dropdown
    fig3.update_layout(
