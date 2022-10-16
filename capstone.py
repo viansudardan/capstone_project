@@ -113,14 +113,14 @@ with c6:
       go.Scatter(x=list(df3.Date), 
               y=list(df3.decrease_price),
    #           name="Valuasi",
-              #color='Currency'
+               color='Negara'
    #           #line=dict(color="#33CFA5")
               ))
    fig3.add_trace(
       go.Scatter(x=list(df3.Date), 
               y=list(df3.close_price),
    #           name="Kurs",
-              #color='Currency'
+              color='Negara'
               #line=dict(color="#F06A6A")
               ))
 
