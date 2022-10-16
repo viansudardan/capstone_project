@@ -100,7 +100,7 @@ with c6:
                showactive=True,
                x=0,
                xanchor="left",
-               y=0,
+               y=10,
                yanchor="top",
               ),
       ]
