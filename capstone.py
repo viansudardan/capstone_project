@@ -38,7 +38,7 @@ with c2:
    st.markdown("<body style='border-radius: 6px; box-shadow : 0 1px 4px rgba(0,0,0,.23);></body>", unsafe_allow_html=True)
    df = pd.read_excel('./DataInflasiAS.xlsx')
    fig = px.line(df, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2", xaxis_title='Tahun', yaxis_title='Persentase (%)')
+   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2", xaxis_title='Periode', yaxis_title='Persentase (%)')
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Tradingeconomics</p>", unsafe_allow_html=True)
@@ -67,7 +67,7 @@ c3, c4 = st.columns([2,1])
 with c3:
    df2 = pd.read_excel('./DataInflasiIND.xlsx')
    fig2 = px.line(df2, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig2.update_layout(title = 'Suku Bunga Acuan BI & Tingkat Inflasi di Indonesia', title_font_size = 20, paper_bgcolor = "#e4e4e4", xaxis_title='Tahun', yaxis_title='Persentase (%)')
+   fig2.update_layout(title = 'Suku Bunga Acuan BI & Tingkat Inflasi di Indonesia', title_font_size = 20, paper_bgcolor = "#e4e4e4", xaxis_title='Periode', yaxis_title='Persentase (%)')
    fig2.show()
    st.plotly_chart(fig2, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Bank Indonesia</p>", unsafe_allow_html=True)
@@ -136,7 +136,7 @@ with c6:
             ),
       ]
    )
-   fig3.update_layout(title = 'Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, xaxis_title='Tanggal', yaxis_title='Nilai')
+   fig3.update_layout(title = 'Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, paper_bgcolor = "#b7d2e8", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
    st.plotly_chart(fig3)
