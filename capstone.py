@@ -112,12 +112,14 @@ with c6:
       go.Scatter(x=list(df3.Date), 
               y=list(df3.decrease_price),
               name="Valuasi",
-              line=dict(color="#33CFA5")))
+              #line=dict(color="#33CFA5")
+              ))
    fig.add_trace(
       go.Scatter(x=list(df3.Date), 
               y=list(df3.close_price),
               name="Kurs",
-              line=dict(color="#F06A6A")))
+              #line=dict(color="#F06A6A")
+              ))
 
    #Nilai = st.radio("",('Valuasi', 'Kurs'), key=None, help=None)
    #if Nilai == "Valuasi":
