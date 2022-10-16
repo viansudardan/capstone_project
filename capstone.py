@@ -166,7 +166,7 @@ with c6:
                active = 0,
                bgcolor = '#fff',
                bordercolor = '#fff',
-               margin=dict(t=5, b=5, l=1, r=1),
+               #margin=dict(t=5, b=5, l=1, r=1),
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
