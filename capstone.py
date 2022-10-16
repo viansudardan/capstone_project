@@ -117,11 +117,16 @@ with c6:
       updatemenus=[
             dict(
                buttons=list([
+                  fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
+                  fig3.show(),
+                  st.plotly_chart(fig3, use_container_width=True),
                   dict(
-                    args=["type", "Valuasi"],
-                    label="Valuasi",
-                    method="restyle"
+                     args=["type", "Valuasi"],
+                     label="Valuasi",
+                     method="restyle",
                   ),
+                  fig4.show(),
+                  st.plotly_chart(fig4, use_container_width=True),
                   dict(
                     args=["type", "Kurs"],
                     label="Kurs",
@@ -139,10 +144,11 @@ with c6:
             ),
       ]
    )
-   fig3.update_layout(title = 'Nilai Dollar AS Terhadap Mata Uang Dunia ', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
-   fig3.show()
+   #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai')
+   #fig3.show()
    #st.plotly_chart(fig3, use_container_width=True)
-   st.plotly_chart(fig3)
+   #st.plotly_chart(fig3)
+
    #tickerSymbol = st.radio("Pick Stock",["GOOGL", "AAPL"])
    #tickerSymbol_text = st.text_input("Enter Ticker")
    #ickerData = yf.Ticker(tickerSymbol_text)
