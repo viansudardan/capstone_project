@@ -59,16 +59,12 @@ with c6:
                  line=dict(color="#33CFA5")
               ))
 
-   #fig3.add_trace(
-   #   go.Scatter(x=list(df3.Date),
-   #              y=list(df3.decrease_price),
-   #              name="Indonesia",
-   #              line=dict(color="33CFA5")))
-   #fig3.add_trace(
-   #   go.Scatter(x=list(df3.Date),
-   #              y=list(df3.close_price),
-   #              name="Indonesia",
-   #              line=dict(color="#F06a6a")))
+   fig3.add_trace(
+      go.Scatter(x=list(df3.Date), 
+                 y=list(df3.close_price),
+                 name="Indonesia",
+                 line=dict(color="#F06A6A")
+              ))
 
    #define annotation
    dec_price = [dict(x=df3.Date,
@@ -102,9 +98,9 @@ with c6:
                direction="down",
                pad={"r": 10, "t": 10},
                showactive=True,
-               #x=-5,
+               #x=5,
                xanchor="left",
-               #y=-5,
+               #y=5,
                yanchor="top",
               ),
       ]
