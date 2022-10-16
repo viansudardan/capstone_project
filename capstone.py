@@ -103,18 +103,18 @@ with c6:
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
    fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
+
    Nilai = st.radio(["Valuasi", "Kurs"])
-   if Nilai == 'Valuasi':
+   Option = (Nilai)
+   if Nilai == "Valuasi":
       fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       fig3.show(),
       st.plotly_chart(fig3, use_container_width=True),
-
    else:
       #fig4.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       fig4.show(),
       st.plotly_chart(fig4, use_container_width=True),
 
-    
    #update plot sizing
    #fig3.update_layout(
     #width=800,
