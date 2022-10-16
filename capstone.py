@@ -100,9 +100,9 @@ with c6:
    #df4 = pd.read_csv('./union_currency.csv')
 
    #initialize figure
-   fig3 = px.line(df3)
+   #fig3 = px.line(df3)
    #fig3 = go.figure()
-   #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
+   fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
    #add traces
@@ -116,8 +116,6 @@ with c6:
                y=list(df.close_price),
                name="Kurs",
                line=dict(color="#F06A6A")))
-
-
 
    #Nilai = st.radio("",('Valuasi', 'Kurs'), key=None, help=None)
    #if Nilai == "Valuasi":
