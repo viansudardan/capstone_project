@@ -130,7 +130,7 @@ with c6:
                pad={"r": 10, "t": 10},
                showactive=True,
                #x=0.1,
-               xanchor="left",
+               xanchor="center",
                #y=1.1,
                yanchor="top"
             ),
