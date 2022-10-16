@@ -48,16 +48,7 @@ with c6:
    fig3 = go.Figure()
    
    #add traces
-   fig3.add_trace(
-      go.Scatter(x=list(df3.Date),
-                 y=list(df3.decrease_price),
-                 name="Indonesia",
-                 line=dict(color="33CFA5")))
-   fig3.add_trace(
-      go.Scatter(x=list(df3.Date),
-                 y=list(df3.close_price),
-                 name="Indonesia",
-                 line=dict(color="#F06a6a")))
+
 
    #define annotation
    dec_price = [dict(x=df3.Date,
