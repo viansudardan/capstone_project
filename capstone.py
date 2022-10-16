@@ -181,9 +181,9 @@ with c6:
                pad={"r": 10, "t": 10},
                #color="white",
                #showactive=True,
-               x=-5,
+               #x=-5,
                xanchor="left",
-               y=-5,
+               #y=-5,
                yanchor="top"
               ),
       ]
