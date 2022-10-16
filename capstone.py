@@ -104,7 +104,7 @@ with c6:
    fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
 
-   Nilai = st.radio("",('Valuasi', 'Kurs'))
+   Nilai = st.radio("",('Valuasi', 'Kurs'), key=None, help=None)
    if Nilai == "Valuasi":
       fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       fig3.show(),
