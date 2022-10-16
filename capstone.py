@@ -106,9 +106,9 @@ with c6:
    fig3.update_layout(
     #width=800,
     #height=900,
-    #color = "white",
+    color = "white",
     autosize=False,
-    #margin=dict(t=0, b=0, l=0, r=0),
+    margin=dict(t=0, b=0, l=0, r=0),
     template="plotly_white",
    )
 
