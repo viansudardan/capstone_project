@@ -100,7 +100,8 @@ with c6:
    #df4 = pd.read_csv('./union_currency.csv')
 
    #initialize figure
-   fig3 = px.figure()
+   fig3 = px.line(df3)
+   #fig3 = go.figure()
    #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
    #fig4 = px.line(df4, x='Date', y='Close', markers=False, color='Currency')
 
@@ -111,7 +112,7 @@ with c6:
                name="Valuasi",
                line=dict(color="#33CFA5")))
    fig.add_trace(
-    px.Scatter(x=list(df.Date),
+      px.Scatter(x=list(df.Date),
                y=list(df.close_price),
                name="Kurs",
                line=dict(color="#F06A6A")))
