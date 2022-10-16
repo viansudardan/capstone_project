@@ -46,6 +46,7 @@ with c6:
    df4 = pd.read_csv('./jpy_rate.csv')
    df5 = pd.read_csv('./gbp_rate.csv')
    df6 = pd.read_csv('./eur_rate.csv')
+   df7 = pd.read_csv('./aud_rate.csv')
    #fig3 = px.line(df3, x='Date', y='close_price', markers=False)
    #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    #fig3.show()
@@ -65,6 +66,7 @@ with c6:
 
    
    #add traces
+   #Figure Valuasi
    fig3.add_trace(
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.decrease_price),
@@ -89,7 +91,14 @@ with c6:
                  name="Euro",
                  line=dict(color="#d602ed")
               ))
+   fig3.add_trace(
+      go.Scatter(x=list(df7.Date), 
+                 y=list(df7.decrease_price),
+                 name="Australia",
+                 line=dict(color="#02ede5")
+              ))
 
+   #Figure Kurs
    fig3.add_trace(
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.close_price),
@@ -113,6 +122,12 @@ with c6:
                  y=list(df6.close_price),
                  name="Euro",
                  line=dict(color="#d602ed")
+              ))
+   fig3.add_trace(
+      go.Scatter(x=list(df7.Date), 
+                 y=list(df7.close_price),
+                 name="Australia",
+                 line=dict(color="#02ede5")
               ))
 
 
@@ -148,10 +163,10 @@ with c6:
                direction="down",
                pad={"r": 10, "t": 10},
                showactive=True,
-               x=0,
-               #xanchor="left",
-               y=10,
-               #yanchor="top",
+               #x=0,
+               xanchor="left",
+               #y=10,
+               yanchor="top"
               ),
       ]
    )
