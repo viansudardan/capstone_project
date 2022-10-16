@@ -101,7 +101,7 @@ with c6:
    #2.initialize figure
    #fig3 = go.Figure()
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Currency')
-   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai')
+   fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', bgcolor = '#fff',bordercolor = '#fff',)
    fig3.show()
    st.plotly_chart(fig3, use_container_width=True),
 
