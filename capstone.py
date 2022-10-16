@@ -87,21 +87,13 @@ c5, c6 = st.columns([1,2])
 with c5:
    st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global meninggalkan negara-negara yang memiliki suku bunga dibawah nilai suku bunga yang ditetapkan oleh The Fed, termasuk Indonesia. Hal ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya, tercatat kurs mata uang rupiah terhadap dollar pada akhir bulan September 2022 adalah sebesar 15.303,70 dan tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
 with c6:   
-   #df3 = pd.read_csv('./union_currency.csv')
-   #fig3 = px.line(df3, x='Date', y='Close', markers=False, color='Currency')
-   #fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-   #fig3.show()
-   #st.plotly_chart(fig3, use_container_width=True)
-   #st.caption("<p style='text-align: center;'>sumber : Yahoo Finance</p>", unsafe_allow_html=True)
-
-   #1.load dataset
    df3 = pd.read_csv('./open_rate.csv')
    fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
    fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
    fig3.show(),
-   st.plotly_chart(fig3, use_container_width=True),
+   st.plotly_chart(fig3, use_container_width=True)
    
-   Lihat_Kurs = st.checkbox("Klik untuk Melihat Kurs Dollar AS Terhadap Mata Uang Lainnya")
+   Lihat_Kurs = st.checkbox("Klik untuk Melihat Nilai Kurs Dollar AS Terhadap Mata Uang Lainnya")
    if Lihat_Kurs:
       #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       #fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
@@ -113,7 +105,7 @@ with c6:
       fig3 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
       fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
       fig3.show(),
-      st.plotly_chart(fig3, use_container_width=True),
+      st.plotly_chart(fig3, use_container_width=True)
 
    #fig4 = px.line(df3, x='Date', y='close_price', markers=False, color='Negara')
    #fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', xaxis_title='Periode', yaxis_title='Nilai', paper_bgcolor = "#e4e4fe")
