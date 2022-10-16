@@ -102,6 +102,7 @@ with c6:
    if Nilai == "Valuasi":
       #fig3.update_layout(title = 'Nilai Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#c7d7e8", xaxis_title='Periode', yaxis_title='Nilai'),
       fig3 = px.line(df3, x='Date', y='decrease_price', markers=False, color='Negara')
+      fig3.update_layout(title = 'Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
       fig3.show(),
       st.plotly_chart(fig3, use_container_width=True),
    elif Nilai == "Kurs":
