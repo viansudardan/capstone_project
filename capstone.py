@@ -190,9 +190,9 @@ with c6:
                pad={"r": 10, "t": 10},
                showactive=True,
                showarrow=False,
-               x=0,
+               #x=0,
                #xanchor="left",
-               y=1.085
+               #y=1.085
                #yanchor="bottom"
               ),
       ]
