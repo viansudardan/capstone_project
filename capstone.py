@@ -231,7 +231,7 @@ with c8:
              marker_color='rgb(26, 118, 255)'
             ))
 
-fig5.update_layout(
+   fig5.update_layout(
     title='Nilai Ekspor Impor Indonesia',
     xaxis_tickfont_size=14,
     yaxis=dict(
@@ -248,8 +248,9 @@ fig5.update_layout(
     barmode='group',
     bargap=0.15, # gap between bars of adjacent location coordinates.
     bargroupgap=0.1 # gap between bars of the same location coordinate.
-)
-fig5.show()
+   )
+   fig5.show()
+   st.plotly_chart(fig5, use_container_width=True)
 
 
 
