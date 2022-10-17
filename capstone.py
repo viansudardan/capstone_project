@@ -250,7 +250,7 @@ with c7:
 with c8: 
    df13 = pd.read_excel('./pdb_union.xlsx')
    fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
-   fig3.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#05daed", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
+   fig5.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#05daed", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
 #df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
