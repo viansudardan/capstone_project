@@ -240,7 +240,7 @@ with c8:
             name="PDB",
             line=dict(color="#f5f507")
             ))
-   fig5.update_layout(title = 'PDB Indonesia (Pengeluaran)', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
+   fig5.update_layout(title = 'PDB Indonesia (Pengeluaran)', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Milyar Rupiah', barmode='stack')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
    
