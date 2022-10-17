@@ -219,13 +219,13 @@ with c8:
    df13 = pd.read_csv('./pdb_impor.csv')
    fig5 = go.Figure()
    fig5.add_trace(
-      go.Bar(x=list(df12.Periode),
-             y=list(df12.Nilai),
+      go.Bar(x=list[df12.Periode],
+             y=list[df12.Nilai],
              name="Ekspor",
              marker_color='rgb(55, 83, 109)'
             ))
    fig5.add_trace(
-      go.Bar(x=list(df13.Periode),
+      go.Bar(x=list[df13.Periode],
              y=list(df13.Nilai),
              name="Impor",
              marker_color='rgb(26, 118, 255)'
