@@ -192,7 +192,7 @@ with c6:
    st.plotly_chart(fig3, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
-st.markdown('Tingkat inflasi AS yang tinggi juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
+st.markdown('Inflasi yang terjadi di AS juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
 st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%, dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
 st.markdown('Adapun dalam menghitung pertumbuhan ekonomi dapat dilakukan dengan menggunakan perhitungan Pendapatan Domestik Bruto (PDB) atas dasar harga konstan. Rumus umum untuk PDB dengan pendekatan pengeluaran adalah penjumlahan dari semua konsumsi, investasi, pengeluaran pemerintah, dan perdagangan luar negeri.')
 c7, c8 = st.columns([1,1])
@@ -216,13 +216,31 @@ with c7:
    st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
 
 with c8: 
-   df13 = pd.read_excel('./pdb_union.xlsx')
-   fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
-   fig5.update_layout(title = "PDB Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
-   fig5.show()
-   st.plotly_chart(fig5, use_container_width=True)
-   st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
-
+   #df13 = pd.read_excel('./pdb_union.xlsx')
+   #fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
+   #fig5.update_layout(title = "PDB Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
+   #fig5.show()
+   #st.plotly_chart(fig5, use_container_width=True)
+   #st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
+   df13 = pd.read_excel('./pdb_master.xlsx')
+   fig5 = go.Figure()
+   fig5.add_trace(go.Bar(x=list(df11.Periode),
+            y=list(df11.Nilai),
+            name="Ekspor",
+            marker_color='rgb(55, 83, 109)'
+            ))
+   fig5.add_trace(go.Bar(x=(df12.Periode),
+            y=(df12.Nilai),
+            name="Impor",
+            marker_color='rgb(26, 118, 255)'
+            ))
+   fig5.add_trace(
+      go.Scatter(x=list(df13.Periode), 
+            y=list(df13.Nilai),
+            name="PDB",
+            line=dict(color="#f5f507")
+            ))
+   
 st.subheader('Lalu, apa yang harus dilakukan oleh Pemerintah RI')
 #st.markdown('Peningkatan inflasi yang terjadi di AS mau tidak mau berimbas terhadap kondisi perekonomian di Indonesia. Tingginya inflasi AS memicu kenaikan suku bunga BI, kenaikan harga barang, serta pelemahan terhadap nilai tukar mata uang Rupiah, dimana beberapa variabel tersebut dapat membuat pertumbuhan ekonomi Indonesia mengalami perlambatan. Pada kali ini Indonesia masih kuat menahan dampak inflasi AS karena sebetulnya inflasi di Indonesia sendiri lebih disebabkan oleh fenomena domestik, yaitu faktor volatile foods sebagai penyumbang utama dan juga dibantu dengan harga komoditas ekspor Indonesia yang meningkat.')
 #st.markdown('Namun Pemerintah Indonesia tidak boleh lengah dengan kondisi ini, jika inflasi terus meningkat dan kondisi perekonomian global mengalami resesi, pemerintah harus menyiapkan strategi – strategi untuk merespon hal tersebut. Solusi yang dapat dilakukan untuk menahan laju inflasi dapat dilakukan dengan berbagai cara, yang pertama melalui kebijakan fiskal dengan mengurangi pengeluaran anggaran pemerintah. Kedua melalui kebijakan moneter dengan mengendalikan jumlah uang yang beredar. Ketiga kebijakan non-moneter dan non-fiskal seperti kebijakan yang meringankan para pengusaha sehingga dapat menambah hasil produksi, kemudian kebijakan penetapan harga maksimum, sehingga diharapkan daya beli masyarakat menjadi lebih baik.')
