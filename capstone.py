@@ -207,10 +207,17 @@ st.markdown('Tingkat inflasi AS yang tinggi juga dapat mengganggu kinerja ekspor
 st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%, dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
 
 st.subheader('Pertumbuhan Ekonomi Indonesia')
-df6 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
-df6['date'] = pd.to_datetime(df6['date'])
-pertumbuhan = df6[['date', 'Pertumbuhan Tahunan']].set_index('date')
-st.line_chart(pertumbuhan)
+
+df11 = pd.read_excel('./pdb_union.xlsx')
+
+fig4 = px.bar(df11, x="Periode", y="Nilai", color="PDB", title="Pendapatan Domestik Bruto (Penggunaan)")
+fig4.show()
+st.plotly_chart(fig4, use_container_width=True)
+
+#df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
+#df12['date'] = pd.to_datetime(df6['date'])
+#pertumbuhan = df6[['date', 'Pertumbuhan Tahunan']].set_index('date')
+#st.line_chart(pertumbuhan)
 
 st.subheader('Lalu, apa yang harus dilakukan oleh Pemerintah RI')
 st.markdown('Peningkatan inflasi yang terjadi di AS mau tidak mau berimbas terhadap kondisi perekonomian di Indonesia. Tingginya inflasi AS memicu kenaikan suku bunga BI, kenaikan harga barang, serta pelemahan terhadap nilai tukar mata uang Rupiah, dimana beberapa variabel tersebut dapat membuat pertumbuhan ekonomi Indonesia mengalami perlambatan. Pada kali ini Indonesia masih kuat menahan dampak inflasi AS karena sebetulnya inflasi di Indonesia sendiri lebih disebabkan oleh fenomena domestik, yaitu faktor volatile foods sebagai penyumbang utama dan juga dibantu dengan harga komoditas ekspor Indonesia yang meningkat.')
