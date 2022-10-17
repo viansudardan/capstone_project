@@ -225,7 +225,7 @@ with c8:
    df13 = pd.read_excel('./pdb_source.xlsx')
    fig5 = go.Figure()
    fig5.add_trace(go.Bar(x=list(df13.Periode),
-            y=list(df13.eksim),
+            y=list(df13.Eksim),
             name="Ekspor - Impor",
             marker_color='rgb(55, 83, 109)'
             ))
