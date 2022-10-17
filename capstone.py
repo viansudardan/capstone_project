@@ -216,8 +216,8 @@ with c7:
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
 with c8: 
-   df12 = pd.read_csv('./pdb_ekspor.csv')
-   df13 = pd.read_csv('./pdb_impor.csv')
+   df12 = pd.read_excel('./pdb_ekspor.xlsx')
+   df13 = pd.read_excel('./pdb_impor.xlsx')
    #fig5 = go.Figure()
    fig5 = px.bar(df12, x="Periode", y="Nilai", title="Ekspor dan Impor Indonesia")
    #fig5 = px.bar(df12, x="Periode", y="Nilai", title="Ekspor dan Impor Indonesia")
