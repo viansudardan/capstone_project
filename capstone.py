@@ -218,7 +218,7 @@ with c7:
 with c8: 
    df12 = pd.read_csv('./pdb_ekspor.csv')
    df13 = pd.read_csv('./pdb_impor.csv')
-   fig5 = go.Figure()
+   #fig5 = go.Figure()
    fig5 = px.bar(df12, x="Periode", y="Nilai", title="Ekspor dan Impor Indonesia")
    #fig5.add_trace(
    #   go.Bar(x=list[df12.Periode],
