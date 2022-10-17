@@ -228,7 +228,7 @@ with c7:
       title='Nilai Ekspor Impor Indonesia',
       paper_bgcolor = "#05daed",
       #xaxis_tickfont_size=14,
-      yaxis=dict(
+      xaxis=dict(
         title='Periode'),
       yaxis=dict(
         title='Milyar Rupiah'
