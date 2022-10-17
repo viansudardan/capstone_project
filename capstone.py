@@ -222,7 +222,7 @@ with c7:
              y=(df12.Nilai),
              name="Impor",
              marker_color='rgb(26, 118, 255)'
-            ))
+            )),
 
    fig4.update_layout(
       title='Nilai Ekspor Impor Indonesia',
