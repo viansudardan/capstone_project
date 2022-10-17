@@ -212,6 +212,7 @@ with c7:
    fig4.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
+   st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
 
 with c8: 
    df13 = pd.read_excel('./pdb_union.xlsx')
@@ -219,6 +220,7 @@ with c8:
    fig5.update_layout(title = "PDB Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
+   st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
 #df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
 #df12['date'] = pd.to_datetime(df6['date'])
 #pertumbuhan = df6[['date', 'Pertumbuhan Tahunan']].set_index('date')
