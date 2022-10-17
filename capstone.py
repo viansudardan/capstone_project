@@ -222,20 +222,9 @@ with c7:
              y=(df12.Nilai),
              name="Impor",
              marker_color='rgb(26, 118, 255)'
-            )),
+            ))
 
-   fig4.update_layout(
-      title='Nilai Ekspor Impor Indonesia',
-      paper_bgcolor = "#ed8505",
-      #xaxis_tickfont_size=14,
-      xaxis=dict(title='Periode'),
-      yaxis=dict(title='Milyar Rupiah'),
-        #titlefont_size=16,
-        #tickfont_size=14,
-      barmode='group',
-      bargap=0.15, # gap between bars of adjacent location coordinates.
-      bargroupgap=0.1 # gap between bars of the same location coordinate.
-   )
+   fig4.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#ed8505", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
 
