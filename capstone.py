@@ -226,23 +226,15 @@ with c7:
 
    fig4.update_layout(
       title='Nilai Ekspor Impor Indonesia',
-      paper_bgcolor = "#05daed",
+      paper_bgcolor = "#ed8505",
       #xaxis_tickfont_size=14,
-      xaxis=dict(
-        title='Periode'),
-      yaxis=dict(
-        title='Milyar Rupiah'
+      xaxis=dict(title='Periode'),
+      yaxis=dict(title='Milyar Rupiah'),
         #titlefont_size=16,
         #tickfont_size=14,
-      ),
-    #legend=dict(
-    #    x=0,
-    #    y=1.0,
-    #    bgcolor='rgba(255, 255, 255, 0)',
-    #    bordercolor='rgba(255, 255, 255, 0)'),
-    barmode='group',
-    bargap=0.15, # gap between bars of adjacent location coordinates.
-    bargroupgap=0.1 # gap between bars of the same location coordinate.
+      barmode='group',
+      bargap=0.15, # gap between bars of adjacent location coordinates.
+      bargroupgap=0.1 # gap between bars of the same location coordinate.
    )
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
@@ -250,7 +242,7 @@ with c7:
 with c8: 
    df13 = pd.read_excel('./pdb_union.xlsx')
    fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
-   fig5.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#05daed", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
+   fig5.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#ed8505", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
 #df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
