@@ -222,21 +222,21 @@ with c8:
    #fig5.show()
    #st.plotly_chart(fig5, use_container_width=True)
    #st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
-   df13 = pd.read_excel('./pdb_master.xlsx')
+   df13 = pd.read_excel('./pdb_source.xlsx')
    fig5 = go.Figure()
-   fig5.add_trace(go.Bar(x=list(df11.Periode),
-            y=list(df11.Nilai),
-            name="Ekspor",
+   fig5.add_trace(go.Bar(x=list(df13.Periode),
+            y=list(df13.eksim),
+            name="Ekspor - Impor",
             marker_color='rgb(55, 83, 109)'
             ))
-   fig5.add_trace(go.Bar(x=(df12.Periode),
-            y=(df12.Nilai),
-            name="Impor",
+   fig5.add_trace(go.Bar(x=(df13.Periode),
+            y=(df13.KRT),
+            name="KRT",
             marker_color='rgb(26, 118, 255)'
             ))
    fig5.add_trace(
       go.Scatter(x=list(df13.Periode), 
-            y=list(df13.Nilai),
+            y=list(df13.pdb),
             name="PDB",
             line=dict(color="#f5f507")
             ))
