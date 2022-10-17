@@ -219,16 +219,15 @@ with c8:
    df12 = pd.read_excel('./pdb_ekspor.xlsx')
    df13 = pd.read_excel('./pdb_impor.xlsx')
    fig5 = go.Figure()
-   fig5 = px.bar(df12, x="Periode", y="Nilai", title="Ekspor dan Impor Indonesia")
-   fig5.add_trace(
-      go.Bar(x=list[df12.Periode],
-             y=list[df12.Nilai],
+   #fig5 = px.bar(df12, x="Periode", y="Nilai", title="Ekspor dan Impor Indonesia")
+   fig5.add_trace(go.Bar(x=list(df12.Periode),
+             y=list(df12.Nilai),
              name="Ekspor",
              marker_color='rgb(55, 83, 109)'
             ))
    fig5.add_trace(
-      go.Bar(x=[df13.Periode],
-             y=[df13.Nilai],
+      go.Bar(x=(df13.Periode),
+             y=(df13.Nilai),
              name="Impor",
              marker_color='rgb(26, 118, 255)'
             ))
