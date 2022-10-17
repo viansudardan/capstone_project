@@ -210,49 +210,49 @@ st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harg
 
 c7, c8 = st.columns([1,1])
 with c7:
-   df11 = pd.read_excel('./pdb_union.xlsx')
-   
-   fig4 = px.bar(df11, x="Periode", y="Nilai", color="PDB", title="Pendapatan Domestik Bruto (Penggunaan)")
-   fig4.show()
-   st.plotly_chart(fig4, use_container_width=True)
-with c8: 
-   df12 = pd.read_excel('./pdb_ekspor.xlsx')
-   df13 = pd.read_excel('./pdb_impor.xlsx')
-   fig5 = go.Figure()
-   #fig5 = px.bar(df12, x="Periode", y="Nilai", title="Ekspor dan Impor Indonesia")
-   fig5.add_trace(go.Bar(x=list(df12.Periode),
-             y=list(df12.Nilai),
+   df11 = pd.read_excel('./pdb_ekspor.xlsx')
+   df12 = pd.read_excel('./pdb_impor.xlsx')
+   fig4 = go.Figure()
+   fig4.add_trace(go.Bar(x=list(df11.Periode),
+             y=list(df11.Nilai),
              name="Ekspor",
              marker_color='rgb(55, 83, 109)'
             ))
-   fig5.add_trace(
-      go.Bar(x=(df13.Periode),
-             y=(df13.Nilai),
+   fig4.add_trace(go.Bar(x=(df12.Periode),
+             y=(df12.Nilai),
              name="Impor",
              marker_color='rgb(26, 118, 255)'
             ))
 
-   fig5.update_layout(
+   fig4.update_layout(
       title='Nilai Ekspor Impor Indonesia',
-      xaxis_tickfont_size=14,
+      paper_bgcolor = "#05daed",
+      #xaxis_tickfont_size=14,
       yaxis=dict(
-        title='USD (millions)',
-        titlefont_size=16,
-        tickfont_size=14,
-    ),
-    legend=dict(
-        x=0,
-        y=1.0,
-        bgcolor='rgba(255, 255, 255, 0)',
-        bordercolor='rgba(255, 255, 255, 0)'
-    ),
+        title='Periode')
+      yaxis=dict(
+        title='Milyar Rupiah'
+        #titlefont_size=16,
+        #tickfont_size=14,
+      ),
+    #legend=dict(
+    #    x=0,
+    #    y=1.0,
+    #    bgcolor='rgba(255, 255, 255, 0)',
+    #    bordercolor='rgba(255, 255, 255, 0)'),
     barmode='group',
     bargap=0.15, # gap between bars of adjacent location coordinates.
     bargroupgap=0.1 # gap between bars of the same location coordinate.
    )
+   fig4.show()
+   st.plotly_chart(fig4, use_container_width=True)
+
+with c8: 
+   df13 = pd.read_excel('./pdb_union.xlsx')
+   fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
+   fig3.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#05daed", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
-
 #df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
 #df12['date'] = pd.to_datetime(df6['date'])
 #pertumbuhan = df6[['date', 'Pertumbuhan Tahunan']].set_index('date')
