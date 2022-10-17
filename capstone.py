@@ -224,6 +224,11 @@ with c8:
    #st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
    df13 = pd.read_excel('./pdb_source.xlsx')
    fig5 = go.Figure()
+   fig5.add_trace(go.Bar(x=(df13.Periode),
+            y=(df13.Inventory),
+            name="Inventory",
+            marker_color='rgb(227, 209, 9)'
+            ))
    fig5.add_trace(go.Bar(x=list(df13.Periode),
             y=list(df13.Eksim),
             name="Ekspor - Impor",
@@ -232,17 +237,12 @@ with c8:
    fig5.add_trace(go.Bar(x=(df13.Periode),
             y=(df13.LNPRT),
             name="LNPRT",
-            marker_color='rgb(29, 181, 70)'
-            ))
-   fig5.add_trace(go.Bar(x=(df13.Periode),
-            y=(df13.Pemerintah),
-            name="Pemerintah",
-            marker_color='rgb(9, 230, 230)'
+            marker_color='rgb(240, 5, 5)'
             ))
    fig5.add_trace(go.Bar(x=(df13.Periode),
             y=(df13.PMTB),
             name="PMTB",
-            marker_color='rgb(9, 20, 230)'
+            marker_color='rgb(227, 125, 9)'
             ))
    fig5.add_trace(go.Bar(x=(df13.Periode),
             y=(df13.KRT),
@@ -250,9 +250,9 @@ with c8:
             marker_color='rgb(26, 118, 255)'
             ))
    fig5.add_trace(go.Bar(x=(df13.Periode),
-            y=(df13.Inventory),
-            name="Inventory",
-            marker_color='rgb(240, 5, 5)'
+            y=(df13.Pemerintah),
+            name="Pemerintah",
+            marker_color='rgb(9, 230, 230)'
             ))
    fig5.add_trace(go.Scatter(x=list(df13.Periode), 
             y=list(df13.pdb),
