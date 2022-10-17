@@ -49,23 +49,13 @@ with c6:
    df7 = pd.read_csv('./aud_rate.csv')
    df8 = pd.read_csv('./cny_rate.csv')
    df9 = pd.read_csv('./chf_rate.csv')
-   df10 = pd.read_csv('./open_rate.csv')
-   #fig3 = px.line(df10, x='Date', y='close_price', markers=False)
-   #fig3.update_layout(title = 'Kurs Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Tanggal', yaxis_title='Nilai')
-   #fig3.show()
-   #st.plotly_chart(fig3, use_container_width=True)
+   #df10 = pd.read_csv('./open_rate.csv')
    
    #initialize figure
    fig3 = go.Figure()
 
    #update plot sizing
-   fig3.update_layout(
-      autosize=True)
-    #width=800,
-    #height=900,
-    #color = "white",
-    #margin=dict(t=15, b=10, l=10, r=15))
-    #template="plotly_white",)
+   fig3.update_layout(autosize=True)
 
    #add traces
    #Figure Valuasi
@@ -156,7 +146,6 @@ with c6:
                  line=dict(color="#f5f507")
               ))
 
-
    #define annotation
    dec_price = [dict(x=df9.Date,
                      y=df9.decrease_price,
@@ -166,6 +155,7 @@ with c6:
                     y=df9.close_price,
                     #xref="x", yref="y"
                     )]
+
    #add dropdown
    fig3.update_layout(
       updatemenus=[
@@ -197,7 +187,6 @@ with c6:
       ]
    )
    
-   #fig3 = px.line(df10, x='Date', y='close_price', markers=False, color='Negara')
    fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
    st.plotly_chart(fig3, use_container_width=True)
@@ -205,9 +194,6 @@ with c6:
 
 st.markdown('Tingkat inflasi AS yang tinggi juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
 st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%, dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
-
-#st.subheader('Pertumbuhan Ekonomi Indonesia')
-
 c7, c8 = st.columns([1,1])
 with c7:
    df11 = pd.read_excel('./pdb_ekspor.xlsx')
@@ -223,7 +209,6 @@ with c7:
              name="Impor",
              marker_color='rgb(26, 118, 255)'
             ))
-
    fig4.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
@@ -231,7 +216,7 @@ with c7:
 with c8: 
    df13 = pd.read_excel('./pdb_union.xlsx')
    fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
-   fig5.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
+   fig5.update_layout(title = "PDB Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
 #df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
