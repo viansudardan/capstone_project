@@ -215,8 +215,8 @@ with c7:
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
 with c8: 
-   df12 = pd.read_csv('./pdb_ekspor')
-   df13 = pd.read_csv('./pdb_impor')
+   df12 = pd.read_csv('./pdb_ekspor.csv')
+   df13 = pd.read_csv('./pdb_impor.csv')
    fig5 = go.Figure()
    fig5.add_trace(
       go.Bar(x=list(df12.Periode),
