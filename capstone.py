@@ -224,14 +224,14 @@ with c7:
              marker_color='rgb(26, 118, 255)'
             ))
 
-   fig4.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#ed8505", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
+   fig4.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
 
 with c8: 
    df13 = pd.read_excel('./pdb_union.xlsx')
    fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
-   fig5.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#ed8505", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
+   fig5.update_layout(title = "Pendapatan Domestik Bruto Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
 #df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
