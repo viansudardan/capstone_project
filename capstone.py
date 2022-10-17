@@ -206,13 +206,52 @@ with c6:
 st.markdown('Tingkat inflasi AS yang tinggi juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
 st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%, dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
 
-st.subheader('Pertumbuhan Ekonomi Indonesia')
+#st.subheader('Pertumbuhan Ekonomi Indonesia')
 
-df11 = pd.read_excel('./pdb_union.xlsx')
+c7, c8 = st.columns([1,1])
+with c7:
+   df11 = pd.read_excel('./pdb_union.xlsx')
+   fig4 = px.bar(df11, x="Periode", y="Nilai", color="PDB", title="Pendapatan Domestik Bruto (Penggunaan)")
+   fig4.show()
+   st.plotly_chart(fig4, use_container_width=True)
+with c8: 
+   df12 = pd.read_csv('./pdb_ekspor')
+   df13 = pd.read_csv('./pdb_impor')
+   fig5 = go.Figure()
+   fig5.add_trace(
+      go.Bar(x=list(df12.Periode),
+             y=list(df12.Nilai),
+             name="Ekspor",
+             marker_color='rgb(55, 83, 109)'
+            ))
+   fig5.add_trace(
+      go.Bar(x=list(df12.Periode),
+             y=list(df12.Nilai),
+             name="Impor",
+             marker_color='rgb(26, 118, 255)'
+            ))
 
-fig4 = px.bar(df11, x="Periode", y="Nilai", color="PDB", title="Pendapatan Domestik Bruto (Penggunaan)")
-fig4.show()
-st.plotly_chart(fig4, use_container_width=True)
+fig5.update_layout(
+    title='Nilai Ekspor Impor Indonesia',
+    xaxis_tickfont_size=14,
+    yaxis=dict(
+        title='USD (millions)',
+        titlefont_size=16,
+        tickfont_size=14,
+    ),
+    legend=dict(
+        x=0,
+        y=1.0,
+        bgcolor='rgba(255, 255, 255, 0)',
+        bordercolor='rgba(255, 255, 255, 0)'
+    ),
+    barmode='group',
+    bargap=0.15, # gap between bars of adjacent location coordinates.
+    bargroupgap=0.1 # gap between bars of the same location coordinate.
+)
+fig5.show()
+
+
 
 #df12 = pd.read_excel('./pertumbuhan_ekonomi.xlsx')
 #df12['date'] = pd.to_datetime(df6['date'])
