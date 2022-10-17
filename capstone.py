@@ -227,18 +227,37 @@ with c8:
    fig5.add_trace(go.Bar(x=list(df13.Periode),
             y=list(df13.Eksim),
             name="Ekspor - Impor",
-            marker_color='rgb(55, 83, 109)'
+            marker_color='rgb(67, 227, 9)'
+            ))
+   fig5.add_trace(go.Bar(x=(df13.Periode),
+            y=(df13.LNPRT),
+            name="LNPRT",
+            marker_color='rgb(29, 181, 70)'
+            ))
+   fig5.add_trace(go.Bar(x=(df13.Periode),
+            y=(df13.Pemerintah),
+            name="Pemerintah",
+            marker_color='rgb(9, 230, 230)'
+            ))
+   fig5.add_trace(go.Bar(x=(df13.Periode),
+            y=(df13.PMTB),
+            name="PMTB",
+            marker_color='rgb(9, 20, 230)'
             ))
    fig5.add_trace(go.Bar(x=(df13.Periode),
             y=(df13.KRT),
             name="KRT",
             marker_color='rgb(26, 118, 255)'
             ))
-   fig5.add_trace(
-      go.Scatter(x=list(df13.Periode), 
+   fig5.add_trace(go.Bar(x=(df13.Periode),
+            y=(df13.Inventory),
+            name="Inventory",
+            marker_color='rgb(240, 5, 5)'
+            ))
+   fig5.add_trace(go.Scatter(x=list(df13.Periode), 
             y=list(df13.pdb),
             name="PDB",
-            line=dict(color="#f5f507")
+            line=dict(color="#37536d")
             ))
    fig5.update_layout(title = 'PDB Indonesia (Pengeluaran)', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Milyar Rupiah', barmode='stack')
    fig5.show()
