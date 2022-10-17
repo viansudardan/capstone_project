@@ -262,6 +262,8 @@ with c8:
    fig5.update_layout(title = 'PDB Indonesia (Pengeluaran)', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Milyar Rupiah', barmode='stack')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
+   st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
+
    
 st.subheader('Lalu, apa yang harus dilakukan oleh Pemerintah RI')
 #st.markdown('Peningkatan inflasi yang terjadi di AS mau tidak mau berimbas terhadap kondisi perekonomian di Indonesia. Tingginya inflasi AS memicu kenaikan suku bunga BI, kenaikan harga barang, serta pelemahan terhadap nilai tukar mata uang Rupiah, dimana beberapa variabel tersebut dapat membuat pertumbuhan ekonomi Indonesia mengalami perlambatan. Pada kali ini Indonesia masih kuat menahan dampak inflasi AS karena sebetulnya inflasi di Indonesia sendiri lebih disebabkan oleh fenomena domestik, yaitu faktor volatile foods sebagai penyumbang utama dan juga dibantu dengan harga komoditas ekspor Indonesia yang meningkat.')
