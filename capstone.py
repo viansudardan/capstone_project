@@ -144,6 +144,7 @@ with c4:
                bgcolor = '#fff',
                bordercolor = '#fff',
                #margin=dict(t=5, b=5, l=1, r=1),
+               visible=False,
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
@@ -211,7 +212,7 @@ with c5:
    fig4.update_layout(
       updatemenus=[
             dict(
-               active = 1,
+               active = 0,
                bgcolor = '#fff',
                bordercolor = '#fff',
                #margin=dict(t=5, b=5, l=1, r=1),
