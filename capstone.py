@@ -256,11 +256,11 @@ with c5:
 
 
 with c6: 
-   fig5 = go.Figure()
-   fig5.update_layout(autosize=True)
-   fig5.update_layout(text='Begitu juga dengan nilai mata uang Rupiah yanag melemah terhadap dollar AS, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
-   #container = st.container()
-   #container.write('Begitu juga dengan nilai mata uang Rupiah yanag melemah terhadap dollar AS, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
+   #fig5 = go.Figure()
+   #fig5.update_layout(autosize=True)
+   #fig5.update_layout(text='Begitu juga dengan nilai mata uang Rupiah yanag melemah terhadap dollar AS, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
+   container = st.container()
+   container.write('Begitu juga dengan nilai mata uang Rupiah yanag melemah terhadap dollar AS, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
 
 st.markdown('Inflasi yang terjadi di AS juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
 st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%, dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
