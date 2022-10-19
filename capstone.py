@@ -195,14 +195,14 @@ with c5:
    fig4.add_trace(
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.decrease_price),
-                 name="Indonesia",
+                 name="Kurs Indonesia",
                  line=dict(color="#33CFA5")
               ))
    #Figure Kurs
    fig4.add_trace(
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.close_price),
-                 name="Indonesia",
+                 name="Valuasi Indonesia",
                  line=dict(color="#e30202"),
                  visible = False
               ))
