@@ -100,21 +100,21 @@ with c4:
       go.Scatter(x=list(df5.Date), 
                  y=list(df5.close_price),
                  name="Inggris",
-                 line=dict(color="#6155e6")
+                 line=dict(color="#6155e6"),
                  visible = False
               ))
    fig3.add_trace(
       go.Scatter(x=list(df6.Date), 
                  y=list(df6.close_price),
                  name="Euro",
-                 line=dict(color="#d602ed")
+                 line=dict(color="#d602ed"),
                  visible = False
               ))
    fig3.add_trace(
       go.Scatter(x=list(df7.Date), 
                  y=list(df7.close_price),
                  name="Australia",
-                 line=dict(color="#02ede5")
+                 line=dict(color="#02ede5"),
                  visible = False
               ))
    #fig3.add_trace(
@@ -128,7 +128,7 @@ with c4:
       go.Scatter(x=list(df9.Date), 
                  y=list(df9.close_price),
                  name="Swiss",
-                 line=dict(color="#590d0d")
+                 line=dict(color="#590d0d"),
                  visible = False
               ))
 
