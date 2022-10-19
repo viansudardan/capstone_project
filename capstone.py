@@ -239,7 +239,7 @@ with c5:
                ]),
                direction="down",
                pad={"r": 10, "t": 10},
-               showactive=False,
+               showactive=True,
                x=-0.05,
                #xanchor="left",
                y=1
@@ -247,7 +247,7 @@ with c5:
               ),
       ]
    )
-   fig4.update_layout(title = 'Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#5ac799", xaxis_title='Periode', yaxis_title='Nilai')
+   fig4.update_layout(title = 'Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4e4", xaxis_title='Periode', yaxis_title='Nilai')
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
