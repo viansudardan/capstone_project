@@ -207,11 +207,11 @@ with c5:
                  visible = False
               ))
    #define annotation
-   dec_price = [dict(x=df3.Date,
+   dec_price2 = [dict(x=df3.Date,
                      y=df3.decrease_price,
                      #xref="x", yref="y"
                      )]
-   cl_price = [dict(x=df3.Date,
+   cl_price2 = [dict(x=df3.Date,
                     y=df3.close_price,
                     #xref="x", yref="y"
                     )]
@@ -229,13 +229,13 @@ with c5:
                        method="update",
                        args=[{"visible": [True, False]},
                        {"title": "Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS",
-                        "annotations": dec_price
+                        "annotations": dec_price2
                         }]), 
                   dict(label="Kurs",
                        method="update",
                        args=[{"visible": [False, True]},
                        {"title": "Nilai Kurs Mata Uang Rupiah Terhadap Dollar AS",
-                        "annotations": cl_price
+                        "annotations": cl_price2
                         }]), 
                ]),
                direction="down",
