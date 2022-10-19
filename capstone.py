@@ -5,6 +5,9 @@ import plotly.graph_objects as go
 import yfinance as yf
 
 st.set_page_config(layout='wide')
+with open('style.css') as f:
+   st.markdown(f'<style>(f.read())</style>', unsafe_allow_html=True)
+
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
 st.write("""
@@ -18,7 +21,8 @@ with c1:
    #st.markdown("<body style='border-radius: 6px; box-shadow : 0 1px 4px rgba(0,0,0,.23);></body>", unsafe_allow_html=True)
    df = pd.read_excel('./DataInflasiAS.xlsx')
    fig = px.line(df, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2", xaxis_title='Periode', yaxis_title='Persentase (%)')
+   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, xaxis_title='Periode', yaxis_title='Persentase (%)')
+   #paper_bgcolor = "#b7d1e2"
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Trading Economics</p>", unsafe_allow_html=True)
