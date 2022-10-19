@@ -39,8 +39,8 @@ with c4:
    df5 = pd.read_csv('./gbp_rate.csv')
    df6 = pd.read_csv('./eur_rate.csv')
    df7 = pd.read_csv('./aud_rate.csv')
-   #df8 = pd.read_csv('./cny_rate.csv')
-   df9 = pd.read_csv('./chf_rate.csv')
+   df8 = pd.read_csv('./chf_rate.csv')
+   #df9 = pd.read_csv('./cny_rate.csv')
    #df10 = pd.read_csv('./open_rate.csv')
    
    #initialize figure
@@ -73,7 +73,7 @@ with c4:
       go.Scatter(x=list(df7.Date), 
                  y=list(df7.decrease_price),
                  name="Australia",
-                 line=dict(color="#02ede5")
+                 line=dict(color="#747375")
               ))
    #fig3.add_trace(
    #   go.Scatter(x=list(df8.Date), 
@@ -82,8 +82,8 @@ with c4:
    #              line=dict(color="#f5f507")
    #           ))
    fig3.add_trace(
-      go.Scatter(x=list(df9.Date), 
-                 y=list(df9.decrease_price),
+      go.Scatter(x=list(df8.Date), 
+                 y=list(df8.decrease_price),
                  name="Swiss",
                  line=dict(color="#590d0d")
               ))
@@ -114,7 +114,7 @@ with c4:
       go.Scatter(x=list(df7.Date), 
                  y=list(df7.close_price),
                  name="Australia",
-                 line=dict(color="#02ede5"),
+                 line=dict(color="#747375"),
                  visible = False
               ))
    #fig3.add_trace(
@@ -125,20 +125,20 @@ with c4:
    #              visible = False
    #           ))
    fig3.add_trace(
-      go.Scatter(x=list(df9.Date), 
-                 y=list(df9.close_price),
+      go.Scatter(x=list(df8.Date), 
+                 y=list(df8.close_price),
                  name="Swiss",
                  line=dict(color="#590d0d"),
                  visible = False
               ))
 
    #define annotation
-   dec_price = [dict(x=df9.Date,
-                     y=df9.decrease_price,
+   dec_price = [dict(x=df8.Date,
+                     y=df8.decrease_price,
                      #xref="x", yref="y"
                      )]
-   cl_price = [dict(x=df9.Date,
-                    y=df9.close_price,
+   cl_price = [dict(x=df8.Date,
+                    y=df8.close_price,
                     #xref="x", yref="y"
                     )]
 
@@ -203,17 +203,18 @@ with c5:
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.close_price),
                  name="Indonesia",
-                 line=dict(color="#33CFA5")
+                 line=dict(color="#e30202"),
+                 visible = False
               ))
    #define annotation
-   #dec_price = [dict(x=df3.Date,
-   #                  y=df3.decrease_price,
-   #                  #xref="x", yref="y"
-   #                  )]
-   #cl_price = [dict(x=df3.Date,
-   #                 y=df3.close_price,
-   #                 #xref="x", yref="y"
-   #                 )]
+   dec_price = [dict(x=df3.Date,
+                     y=df3.decrease_price,
+                     #xref="x", yref="y"
+                     )]
+   cl_price = [dict(x=df3.Date,
+                    y=df3.close_price,
+                    #xref="x", yref="y"
+                    )]
 #add dropdown
    fig4.update_layout(
       updatemenus=[
@@ -227,13 +228,13 @@ with c5:
                        method="update",
                        args=[{"visible": [True, False]},
                        {"title": "Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS",
-                        #"annotations": dec_price
+                        "annotations": dec_price
                         }]), 
                   dict(label="Kurs",
                        method="update",
                        args=[{"visible": [False, True]},
                        {"title": "Nilai Kurs Mata Uang Rupiah Terhadap Dollar AS",
-                        #"annotations": cl_price
+                        "annotations": cl_price
                         }]), 
                ]),
                direction="down",
@@ -246,7 +247,7 @@ with c5:
               ),
       ]
    )
-   fig4.update_layout(title = 'Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Nilai')
+   fig4.update_layout(title = 'Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#5ac799", xaxis_title='Periode', yaxis_title='Nilai')
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
