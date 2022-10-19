@@ -211,7 +211,7 @@ with c5:
    fig4.update_layout(
       updatemenus=[
             dict(
-               active = 0,
+               active = 1,
                bgcolor = '#fff',
                bordercolor = '#fff',
                #margin=dict(t=5, b=5, l=1, r=1),
