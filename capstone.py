@@ -18,6 +18,7 @@ st.markdown('Kondisi perekonomian dunia saat ini tengah mengalami guncangan heba
 f = """
 <style>
 [data-testid="column"]
+[div.css-kb7dt5.e1tzin5v3]
 {
 background-color: #e0e0e0e0;
 border : 1px solid #e0e0e0e0;
