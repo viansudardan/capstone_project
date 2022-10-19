@@ -248,6 +248,7 @@ with c5:
               ),
       ]
    )
+
    fig4.update_layout(title = 'Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4e4", xaxis_title='Periode', yaxis_title='Nilai')
    fig4.show()
    st.plotly_chart(fig4, use_container_width=True)
