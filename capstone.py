@@ -34,20 +34,8 @@ c3, c4 = st.columns([1,2])
 with c3:
    st.markdown('Dampak lainnya adalah biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara yang mengambil bahan baku dari AS. Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan memicu aliran modal global masuk ke pasar AS, ini akan berimbas kepada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadapa mata uang lainnya.')
 with c4:
-   df2 = pd.read_excel('./DataInflasiIND.xlsx')
-   fig2 = px.line(df2, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig2.update_layout(title = 'Suku Bunga Acuan BI & Tingkat Inflasi di Indonesia', title_font_size = 20, paper_bgcolor = "#e4e4e4", xaxis_title='Periode', yaxis_title='Persentase (%)')
-   fig2.show()
-   st.plotly_chart(fig2, use_container_width=True)
-   st.caption("<p style='text-align: center;'>Sumber : Bank Indonesia</p>", unsafe_allow_html=True)   
-
-c5, c6 = st.columns([1,2])
-with c5:
-   st.markdown('Kurs mata uang Rupiah melemah terhadap dollar AS sudah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
-with c6: 
-   #load dataset
-   df3 = pd.read_csv('./ind_rate.csv')
-   df4 = pd.read_csv('./jpy_rate.csv')
+     #load dataset
+   df4 = pd.read_csv('./sgd_rate.csv')
    df5 = pd.read_csv('./gbp_rate.csv')
    df6 = pd.read_csv('./eur_rate.csv')
    df7 = pd.read_csv('./aud_rate.csv')
@@ -64,15 +52,9 @@ with c6:
    #add traces
    #Figure Valuasi
    fig3.add_trace(
-      go.Scatter(x=list(df3.Date), 
-                 y=list(df3.decrease_price),
-                 name="Indonesia",
-                 line=dict(color="#33CFA5")
-              ))
-   fig3.add_trace(
       go.Scatter(x=list(df4.Date), 
                  y=list(df4.decrease_price),
-                 name="Jepang",
+                 name="Singapura",
                  line=dict(color="#F06A6A")
               ))
    fig3.add_trace(
@@ -108,15 +90,9 @@ with c6:
 
    #Figure Kurs
    fig3.add_trace(
-      go.Scatter(x=list(df3.Date), 
-                 y=list(df3.close_price),
-                 name="Indonesia",
-                 line=dict(color="#33CFA5")
-              ))
-   fig3.add_trace(
       go.Scatter(x=list(df4.Date), 
                  y=list(df4.close_price),
-                 name="Jepang",
+                 name="Singapura",
                  line=dict(color="#F06A6A")
               ))
    fig3.add_trace(
@@ -171,12 +147,12 @@ with c6:
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
-                       args=[{"visible": [True, True, True, True, True, True, True, False, False, False, False, False, False, False]},
+                       args=[{"visible": [True, True, True, True, True, True, False, False, False, False, False, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
-                       args=[{"visible": [False, False, False, False, False, False, False, True, True, True, True, True, True, True]},
+                       args=[{"visible": [False, False, False, False, False, False, True, True, True, True, True, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
@@ -196,6 +172,80 @@ with c6:
    st.plotly_chart(fig3, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
+
+c5, c6 = st.columns([2,1])
+with c5:
+   df3 = pd.read_csv('./ind_rate.csv')
+
+   #initialize figure
+   fig4 = go.Figure()
+
+   #update plot sizing
+   fig4.update_layout(autosize=True)
+
+   #add traces
+   #Figure Valuasi
+   fig4.add_trace(
+      go.Scatter(x=list(df3.Date), 
+                 y=list(df3.decrease_price),
+                 name="Indonesia",
+                 line=dict(color="#33CFA5")
+              ))
+   #Figure Kurs
+   fig4.add_trace(
+      go.Scatter(x=list(df3.Date), 
+                 y=list(df3.close_price),
+                 name="Indonesia",
+                 line=dict(color="#33CFA5")
+              ))
+   #define annotation
+   dec_price = [dict(x=df3.Date,
+                     y=df3.decrease_price,
+                     #xref="x", yref="y"
+                     )]
+   cl_price = [dict(x=df3.Date,
+                    y=df3.close_price,
+                    #xref="x", yref="y"
+                    )]
+#add dropdown
+   fig4.update_layout(
+      updatemenus=[
+            dict(
+               active = 0,
+               bgcolor = '#fff',
+               bordercolor = '#fff',
+               #margin=dict(t=5, b=5, l=1, r=1),
+               buttons=list([
+                  dict(label="Valuasi",
+                       method="update",
+                       args=[{"visible": [True, False]},
+                       {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
+                        "annotations": dec_price}]), 
+                  dict(label="Kurs",
+                       method="update",
+                       args=[{"visible": [False, True]},
+                       {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
+                        "annotations": cl_price}]), 
+               ]),
+               direction="down",
+               pad={"r": 10, "t": 10},
+               showactive=True,
+               x=-0.05,
+               #xanchor="left",
+               y=1
+               #yanchor="top"
+              ),
+      ]
+   )
+   fig4.update_layout(title = 'Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Nilai')
+   fig4.show()
+   st.plotly_chart(fig4, use_container_width=True)
+   st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
+
+
+with c6: 
+   st.markdown('Kurs mata uang Rupiah melemah terhadap dollar AS sudah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya. Harus menjadi perhatian bagi pemerintah bahwasannya menaikan suku bunga dapat memperlambat laju pertumbuhan ekonomi dan menurunkan daya beli masyarakat.')
+
 st.markdown('Inflasi yang terjadi di AS juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
 st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%, dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
 st.markdown('Adapun dalam menghitung pertumbuhan ekonomi dapat dilakukan dengan menggunakan perhitungan Pendapatan Domestik Bruto (PDB) atas dasar harga konstan. Rumus umum untuk PDB dengan pendekatan pengeluaran adalah penjumlahan dari semua konsumsi, investasi, pengeluaran pemerintah, dan perdagangan luar negeri.')
@@ -203,20 +253,20 @@ c7, c8 = st.columns([1,1])
 with c7:
    df11 = pd.read_excel('./pdb_ekspor.xlsx')
    df12 = pd.read_excel('./pdb_impor.xlsx')
-   fig4 = go.Figure()
-   fig4.add_trace(go.Bar(x=list(df11.Periode),
+   fig5 = go.Figure()
+   fig5.add_trace(go.Bar(x=list(df11.Periode),
              y=list(df11.Nilai),
              name="Ekspor",
              marker_color='rgb(55, 83, 109)'
             ))
-   fig4.add_trace(go.Bar(x=(df12.Periode),
+   fig5.add_trace(go.Bar(x=(df12.Periode),
              y=(df12.Nilai),
              name="Impor",
              marker_color='rgb(26, 118, 255)'
             ))
-   fig4.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
-   fig4.show()
-   st.plotly_chart(fig4, use_container_width=True)
+   fig5.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
+   fig5.show()
+   st.plotly_chart(fig5, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
 
 with c8: 
