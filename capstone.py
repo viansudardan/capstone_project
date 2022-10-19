@@ -15,20 +15,20 @@ st.markdown('Kondisi perekonomian dunia saat ini tengah mengalami guncangan heba
 #with open('./style.css') as f:
 #   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-f = """
-<style>
-[data-testid="column"]
-[div.css-kb7dt5.e1tzin5v3]
-{
-background-color: #e0e0e0e0;
-border : 1px solid #e0e0e0e0;
-padding: 20px 20px 20px 70px;
-padding: 5% 5% 5% 10%;
-border-radius:10px;
-} 
-</style>
-"""
-st.markdown(f, unsafe_allow_html=True)
+#f = """
+#<style>
+#[data-testid="column"]
+#[div.css-kb7dt5.e1tzin5v3]
+#{
+#background-color: #e0e0e0e0;
+#border : 1px solid #e0e0e0e0;
+#padding: 20px 20px 20px 70px;
+#padding: 5% 5% 5% 10%;
+#border-radius:10px;
+#} 
+#</style>
+#"""
+#st.markdown(f, unsafe_allow_html=True)
 
 c1, c2 = st.columns([1,1])
 with c1:
@@ -36,8 +36,7 @@ with c1:
    #st.markdown("<body style='border-radius: 6px; box-shadow : 0 1px 4px rgba(0,0,0,.23);></body>", unsafe_allow_html=True)
    df = pd.read_excel('./DataInflasiAS.xlsx')
    fig = px.line(df, x='Periode', y='Nilai', markers=True, color='Rate')
-   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, xaxis_title='Periode', yaxis_title='Persentase (%)')
-   #paper_bgcolor = "#b7d1e2"
+   fig.update_layout(title = 'Suku Bunga Acuan The Fed & Tingkat Inflasi di AS', title_font_size = 20, paper_bgcolor = "#b7d1e2", xaxis_title='Periode', yaxis_title='Persentase (%)')
    fig.show()
    st.plotly_chart(fig, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Trading Economics</p>", unsafe_allow_html=True)
