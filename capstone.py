@@ -223,6 +223,7 @@ with c5:
                bgcolor = '#fff',
                bordercolor = '#fff',
                #margin=dict(t=5, b=5, l=1, r=1),
+               visible = True,
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
