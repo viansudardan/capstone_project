@@ -219,19 +219,19 @@ with c5:
                   dict(label="Valuasi",
                        method="update",
                        args=[{"visible": [True, False]},
-                       {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
+                       {"title": "Nilai Valuasi Mata Uang Rupiah Terhadap Dollar AS",
                         #"annotations": dec_price
                         }]), 
                   dict(label="Kurs",
                        method="update",
                        args=[{"visible": [False, True]},
-                       {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
+                       {"title": "Nilai Kurs Mata Uang Rupiah Terhadap Dollar AS",
                         #"annotations": cl_price
                         }]), 
                ]),
                direction="down",
                pad={"r": 10, "t": 10},
-               showactive=True,
+               showactive=False,
                x=-0.05,
                #xanchor="left",
                y=1
