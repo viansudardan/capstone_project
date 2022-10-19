@@ -199,14 +199,14 @@ with c5:
                  line=dict(color="#33CFA5")
               ))
    #define annotation
-   dec_price = [dict(x=df3.Date,
-                     y=df3.decrease_price,
-                     #xref="x", yref="y"
-                     )]
-   cl_price = [dict(x=df3.Date,
-                    y=df3.close_price,
-                    #xref="x", yref="y"
-                    )]
+   #dec_price = [dict(x=df3.Date,
+   #                  y=df3.decrease_price,
+   #                  #xref="x", yref="y"
+   #                  )]
+   #cl_price = [dict(x=df3.Date,
+   #                 y=df3.close_price,
+   #                 #xref="x", yref="y"
+   #                 )]
 #add dropdown
    fig4.update_layout(
       updatemenus=[
