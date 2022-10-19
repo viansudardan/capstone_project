@@ -256,7 +256,12 @@ with c5:
 
 
 with c6: 
-   st.text('Begitu juga dengan nilai mata uang Rupiah yanag melemah terhadap dollar AS, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
+   container = st.container()
+   container.write('Begitu juga dengan nilai mata uang Rupiah yanag melemah terhadap dollar AS, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
+   st.write("This is outside the container")
+
+   # Now insert some more in the container
+   container.write("This is inside too")
 
 st.markdown('Inflasi yang terjadi di AS juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi demand dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan.')
 st.markdown('Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%, dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
@@ -279,7 +284,7 @@ with c7:
    fig5.update_layout(title ="Nilai Ekspor Impor Indonesia", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis=dict(title='Periode'), yaxis=dict(title='Milyar Rupiah'), barmode='group', bargap=0.15, bargroupgap=0.1)
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
-   st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
+   st.caption("<p style='text-align: center;'>Sumber : Badan Pusat Statistik</p>", unsafe_allow_html=True)
 
 with c8: 
    #df13 = pd.read_excel('./pdb_union.xlsx')
@@ -328,7 +333,7 @@ with c8:
    fig5.update_layout(title = 'PDB Indonesia (Pengeluaran)', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Milyar Rupiah', barmode='stack')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
-   st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
+   st.caption("<p style='text-align: center;'>Sumber : Badan Pusat Statistik</p>", unsafe_allow_html=True)
 
    
 st.subheader('Lalu, apa yang harus dilakukan oleh Pemerintah RI')
