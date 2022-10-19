@@ -39,7 +39,7 @@ with c4:
    df5 = pd.read_csv('./gbp_rate.csv')
    df6 = pd.read_csv('./eur_rate.csv')
    df7 = pd.read_csv('./aud_rate.csv')
-   df8 = pd.read_csv('./cny_rate.csv')
+   #df8 = pd.read_csv('./cny_rate.csv')
    df9 = pd.read_csv('./chf_rate.csv')
    #df10 = pd.read_csv('./open_rate.csv')
    
@@ -75,17 +75,17 @@ with c4:
                  name="Australia",
                  line=dict(color="#02ede5")
               ))
-   fig3.add_trace(
-      go.Scatter(x=list(df8.Date), 
-                 y=list(df8.decrease_price),
-                 name="China",
-                 line=dict(color="#590d0d")
-              ))
+   #fig3.add_trace(
+   #   go.Scatter(x=list(df8.Date), 
+   #              y=list(df8.decrease_price),
+   #              name="China",
+   #              line=dict(color="#f5f507")
+   #           ))
    fig3.add_trace(
       go.Scatter(x=list(df9.Date), 
                  y=list(df9.decrease_price),
                  name="Swiss",
-                 line=dict(color="#f5f507")
+                 line=dict(color="#590d0d")
               ))
 
    #Figure Kurs
@@ -93,37 +93,43 @@ with c4:
       go.Scatter(x=list(df4.Date), 
                  y=list(df4.close_price),
                  name="Singapura",
-                 line=dict(color="#F06A6A")
+                 line=dict(color="#F06A6A"),
+                 visible = False
               ))
    fig3.add_trace(
       go.Scatter(x=list(df5.Date), 
                  y=list(df5.close_price),
                  name="Inggris",
                  line=dict(color="#6155e6")
+                 visible = False
               ))
    fig3.add_trace(
       go.Scatter(x=list(df6.Date), 
                  y=list(df6.close_price),
                  name="Euro",
                  line=dict(color="#d602ed")
+                 visible = False
               ))
    fig3.add_trace(
       go.Scatter(x=list(df7.Date), 
                  y=list(df7.close_price),
                  name="Australia",
                  line=dict(color="#02ede5")
+                 visible = False
               ))
-   fig3.add_trace(
-      go.Scatter(x=list(df8.Date), 
-                 y=list(df8.close_price),
-                 name="China",
-                 line=dict(color="#590d0d")
-              ))
+   #fig3.add_trace(
+   #   go.Scatter(x=list(df8.Date), 
+   #              y=list(df8.close_price),
+   #              name="China",
+   #              line=dict(color="#f5f507")
+   #              visible = False
+   #           ))
    fig3.add_trace(
       go.Scatter(x=list(df9.Date), 
                  y=list(df9.close_price),
                  name="Swiss",
-                 line=dict(color="#f5f507")
+                 line=dict(color="#590d0d")
+                 visible = False
               ))
 
    #define annotation
@@ -148,12 +154,12 @@ with c4:
                buttons=list([
                   dict(label="Valuasi",
                        method="update",
-                       args=[{"visible": [True, True, True, True, True, True, False, False, False, False, False, False]},
+                       args=[{"visible": [True, True, True, True, True, False, False, False, False, False]},
                        {"title": "Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": dec_price}]), 
                   dict(label="Kurs",
                        method="update",
-                       args=[{"visible": [False, False, False, False, False, False, True, True, True, True, True, True]},
+                       args=[{"visible": [False, False, False, False, False, True, True, True, True, True]},
                        {"title": "Nilai Kurs Mata Uang Dunia Terhadap Dollar AS",
                         "annotations": cl_price}]), 
                ]),
