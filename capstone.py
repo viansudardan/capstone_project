@@ -5,15 +5,15 @@ import plotly.graph_objects as go
 import yfinance as yf
 
 st.set_page_config(layout='wide')
-with open('style.css') as f:
-   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
 st.write("""
 Made with **streamlit** by Novianto Sudardan
 """)
 st.markdown('Kondisi perekonomian dunia saat ini tengah mengalami guncangan hebat akibat dari kondisi yang kian tidak menentu, dimulai dari krisis kesehatan global akibat pandemi COVID-19 yang terjadi pada awal tahun 2020, dilanjutkan dengan isu geopolitik antara Rusia dan Ukrania yang menyebabkan _supply disruption_ terhadap berbagai komoditas. Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara _superpower_ pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS _(Bureau of Labor Statistics)_ mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir. Untuk merespon kebijakan tersebut, Bank Sentral beberapa negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing _(capital outflow)_, tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022.')
+
+with open('./style.css') as f:
+   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 c1, c2 = st.columns([1,1])
 with c1:
