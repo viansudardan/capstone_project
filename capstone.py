@@ -328,7 +328,7 @@ with c8:
             name="PDB",
             line=dict(color="#37536d")
             ))
-   fig5.update_layout(title = 'PDB Indonesia (Pengeluaran)', title_font_size = 20, paper_bgcolor = "#e4e4e4", xaxis_title='Periode', yaxis_title='Milyar Rupiah', barmode='stack')
+   fig5.update_layout(title = 'PDB Indonesia (Pengeluaran)', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Milyar Rupiah', barmode='stack')
    fig5.show()
    st.plotly_chart(fig5, use_container_width=True)
    st.caption("<p style='text-align: center;'>Sumber : Badan Pusat Statistik</p>", unsafe_allow_html=True)
