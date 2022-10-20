@@ -44,7 +44,7 @@ with c4:
    df6 = pd.read_csv('./eur_rate.csv')
    df7 = pd.read_csv('./aud_rate.csv')
    df8 = pd.read_csv('./chf_rate.csv')
-   #df9 = pd.read_csv('./cny_rate.csv')
+   df9 = pd.read_csv('./kwd_rate.csv')
    #df10 = pd.read_csv('./open_rate.csv')
    
    #initialize figure
@@ -79,12 +79,12 @@ with c4:
                  name="Australia",
                  line=dict(color="#747375")
               ))
-   #fig3.add_trace(
-   #   go.Scatter(x=list(df8.Date), 
-   #              y=list(df8.decrease_price),
-   #              name="China",
-   #              line=dict(color="#f5f507")
-   #           ))
+   fig3.add_trace(
+      go.Scatter(x=list(df9.Date), 
+                 y=list(df8.decrease_price),
+                 name="Kuwait",
+                 line=dict(color="#0a704b")
+              ))
    fig3.add_trace(
       go.Scatter(x=list(df8.Date), 
                  y=list(df8.decrease_price),
@@ -121,13 +121,13 @@ with c4:
                  line=dict(color="#747375"),
                  visible = False
               ))
-   #fig3.add_trace(
-   #   go.Scatter(x=list(df8.Date), 
-   #              y=list(df8.close_price),
-   #              name="China",
-   #              line=dict(color="#f5f507")
-   #              visible = False
-   #           ))
+   fig3.add_trace(
+      go.Scatter(x=list(df9.Date), 
+                 y=list(df9.close_price),
+                 name="Kuwait",
+                 line=dict(color="#0a704b")
+                 visible = False
+              ))
    fig3.add_trace(
       go.Scatter(x=list(df8.Date), 
                  y=list(df8.close_price),
