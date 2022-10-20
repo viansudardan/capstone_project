@@ -81,7 +81,7 @@ with c4:
               ))
    fig3.add_trace(
       go.Scatter(x=list(df9.Date), 
-                 y=list(df8.decrease_price),
+                 y=list(df9.decrease_price),
                  name="Kuwait",
                  line=dict(color="#0a704b")
               ))
