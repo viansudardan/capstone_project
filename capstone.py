@@ -201,7 +201,7 @@ with c5:
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.decrease_price),
                  name="Indonesia",
-                 line=dict(color="#eb9e34")
+                 line=dict(color="#eb8034")
               ))
    #Figure Kurs
    fig4.add_trace(
