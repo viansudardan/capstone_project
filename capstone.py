@@ -125,7 +125,7 @@ with c4:
       go.Scatter(x=list(df9.Date), 
                  y=list(df9.close_price),
                  name="Kuwait",
-                 line=dict(color="#0a704b")
+                 line=dict(color="#0a704b"),
                  visible = False
               ))
    fig3.add_trace(
