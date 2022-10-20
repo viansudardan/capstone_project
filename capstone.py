@@ -5,8 +5,6 @@ import plotly.graph_objects as go
 import yfinance as yf
 
 st.set_page_config(layout='wide')
-
-#st.image('./Inflasi copy.jpg')
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
 st.write("""
@@ -33,9 +31,9 @@ with c2:
 
 c3, c4 = st.columns([1,2])
 with c3:
-   #st.markdown('Dampak lainnya adalah biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara yang mengambil bahan baku dari AS. Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan berimbas pada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadap mata uang lainnya.')
    #with open('style.css') as f:
    #   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+   #st.markdown('Dampak lainnya adalah biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara yang mengambil bahan baku dari AS. Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan berimbas pada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadap mata uang lainnya.')
    st.markdown("<p style='color: black; padding: 10px 10px 10px 20px; border-radius: 0px; border: 1px solid #CCCCCC;'> Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan nilai suku bunga yang tinggi, hal ini berimbas pada nilai kurs dollar AS yang kian menguat. Terlihat pergerakan nilai mata uang dunia yang cenderung menurun dalam setahun terakhir.</p>", unsafe_allow_html=True)
 
 with c4:
@@ -140,11 +138,9 @@ with c4:
    #define annotation
    dec_price = [dict(x=df9.Date,
                      y=df9.decrease_price,
-                     #xref="x", yref="y"
                      )]
    cl_price = [dict(x=df9.Date,
                     y=df9.close_price,
-                    #xref="x", yref="y"
                     )]
 
    #add dropdown
@@ -154,7 +150,6 @@ with c4:
                active = 0,
                bgcolor = '#fff',
                bordercolor = '#fff',
-               #margin=dict(t=5, b=5, l=1, r=1),
                visible = True,
                buttons=list([
                   dict(label="Valuasi",
@@ -172,9 +167,7 @@ with c4:
                pad={"r": 10, "t": 10},
                showactive=True,
                x=-0.05,
-               #xanchor="left",
                y=1
-               #yanchor="top"
               ),
       ]
    )
@@ -214,11 +207,9 @@ with c5:
    #define annotation
    dec_price2 = [dict(x=df3.Date,
                      y=df3.decrease_price,
-                     #xref="x", yref="y"
                      )]
    cl_price2 = [dict(x=df3.Date,
                     y=df3.close_price,
-                    #xref="x", yref="y"
                     )]
 #add dropdown
    fig4.update_layout(
@@ -227,7 +218,6 @@ with c5:
                active = 0,
                bgcolor = '#fff',
                bordercolor = '#fff',
-               #margin=dict(t=5, b=5, l=1, r=1),
                visible = True,
                buttons=list([
                   dict(label="Valuasi",
@@ -247,9 +237,7 @@ with c5:
                pad={"r": 10, "t": 10},
                showactive=True,
                x=-0.05,
-               #xanchor="left",
                y=1
-               #yanchor="top"
               ),
       ]
    )
@@ -286,12 +274,6 @@ with c7:
    st.caption("<p style='text-align: center;'>Sumber : Badan Pusat Statistik</p>", unsafe_allow_html=True)
 
 with c8: 
-   #df13 = pd.read_excel('./pdb_union.xlsx')
-   #fig5 = px.bar(df13, x="Periode", y="Nilai", color="Jenis")
-   #fig5.update_layout(title = "PDB Indonesia (Pengeluaran)", title_font_size = 20, paper_bgcolor = "#f2cb9b", xaxis_title='Periode', yaxis_title='Milyar Rupiah')
-   #fig5.show()
-   #st.plotly_chart(fig5, use_container_width=True)
-   #st.caption("<p style='text-align: center;'>Sumber : BPS</p>", unsafe_allow_html=True)
    df13 = pd.read_excel('./pdb_source.xlsx')
    fig5 = go.Figure()
    fig5.add_trace(go.Bar(x=(df13.Periode),
@@ -339,11 +321,6 @@ st.subheader('Lalu, apa yang harus dilakukan oleh Pemerintah RI')
 #st.markdown('Peningkatan inflasi yang terjadi di AS mau tidak mau berimbas terhadap kondisi perekonomian di Indonesia. Tingginya inflasi AS memicu kenaikan suku bunga BI, kenaikan harga barang, serta pelemahan terhadap nilai tukar mata uang Rupiah, dimana beberapa variabel tersebut dapat membuat pertumbuhan ekonomi Indonesia mengalami perlambatan. Pada kali ini Indonesia masih kuat menahan dampak inflasi AS karena sebetulnya inflasi di Indonesia sendiri lebih disebabkan oleh fenomena domestik, yaitu faktor volatile foods sebagai penyumbang utama dan juga dibantu dengan harga komoditas ekspor Indonesia yang meningkat.')
 #st.markdown('Namun Pemerintah Indonesia tidak boleh lengah dengan kondisi ini, jika inflasi terus meningkat dan kondisi perekonomian global mengalami resesi, pemerintah harus menyiapkan strategi – strategi untuk merespon hal tersebut. Solusi yang dapat dilakukan untuk menahan laju inflasi dapat dilakukan dengan berbagai cara, yang pertama melalui kebijakan fiskal dengan mengurangi pengeluaran anggaran pemerintah. Kedua melalui kebijakan moneter dengan mengendalikan jumlah uang yang beredar. Ketiga kebijakan non-moneter dan non-fiskal seperti kebijakan yang meringankan para pengusaha sehingga dapat menambah hasil produksi, kemudian kebijakan penetapan harga maksimum, sehingga diharapkan daya beli masyarakat menjadi lebih baik.')
 st.markdown('Tingkat inflasi yang tinggi akan memicu penekanan jika tidak di imbangi dengan faktor ekonomi yg meningkat seperti kegiatan ekspor-impor, peningkatan devisa, peningkatan investasi, serta stabilitas ekonomi dalam negeri. Pemerintah Indonesia tidak boleh lengah dengan kondisi ini, harus waspada terhadap berakhirnya _windfall_ komoditas ditambah lagi jika inflasi terus meningkat dan kondisi perekonomian global mengalami resesi, pemerintah harus menyiapkan strategi – strategi untuk merespon hal tersebut. Solusi yang dapat dilakukan untuk menahan laju inflasi dapat dilakukan dengan berbagai cara, yang pertama melalui kebijakan fiskal yang dapat dilakukan dengan mengurangi pengeluaran anggaran pemerintah. Kedua melalui kebijakan moneter, yaitu pengendalian terhadap jumlah uang yang beredar. Ketiga kebijakan non-moneter dan non-fiskal seperti kebijakan yang meringankan para pengusaha agar dapat lebih produktif sehingga dapat menambah hasil produksi dan menyerap tenaga kerja lokal, kemudian kebijakan penetapan harga maksimum, sehingga diharapkan daya beli masyarakat menjadi lebih baik.')
-
-#st.write('---')
-#st.write("""
-#Made with **streamlit** by Novianto Sudardan
-#""")
 
 hide_streamlit_style = """
             <style>
