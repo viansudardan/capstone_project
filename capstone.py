@@ -340,10 +340,20 @@ st.subheader('Lalu, apa yang harus dilakukan oleh Pemerintah RI')
 #st.markdown('Namun Pemerintah Indonesia tidak boleh lengah dengan kondisi ini, jika inflasi terus meningkat dan kondisi perekonomian global mengalami resesi, pemerintah harus menyiapkan strategi – strategi untuk merespon hal tersebut. Solusi yang dapat dilakukan untuk menahan laju inflasi dapat dilakukan dengan berbagai cara, yang pertama melalui kebijakan fiskal dengan mengurangi pengeluaran anggaran pemerintah. Kedua melalui kebijakan moneter dengan mengendalikan jumlah uang yang beredar. Ketiga kebijakan non-moneter dan non-fiskal seperti kebijakan yang meringankan para pengusaha sehingga dapat menambah hasil produksi, kemudian kebijakan penetapan harga maksimum, sehingga diharapkan daya beli masyarakat menjadi lebih baik.')
 st.markdown('Tingkat inflasi yang tinggi akan memicu penekanan jika tidak di imbangi dengan faktor ekonomi yg meningkat seperti kegiatan ekspor-impor, peningkatan devisa, peningkatan investasi, serta stabilitas ekonomi dalam negeri. Pemerintah Indonesia tidak boleh lengah dengan kondisi ini, harus waspada terhadap berakhirnya _windfall_ komoditas ditambah lagi jika inflasi terus meningkat dan kondisi perekonomian global mengalami resesi, pemerintah harus menyiapkan strategi – strategi untuk merespon hal tersebut. Solusi yang dapat dilakukan untuk menahan laju inflasi dapat dilakukan dengan berbagai cara, yang pertama melalui kebijakan fiskal yang dapat dilakukan dengan mengurangi pengeluaran anggaran pemerintah. Kedua melalui kebijakan moneter, yaitu pengendalian terhadap jumlah uang yang beredar. Ketiga kebijakan non-moneter dan non-fiskal seperti kebijakan yang meringankan para pengusaha agar dapat lebih produktif sehingga dapat menambah hasil produksi dan menyerap tenaga kerja lokal, kemudian kebijakan penetapan harga maksimum, sehingga diharapkan daya beli masyarakat menjadi lebih baik.')
 
+st.write('---')
+st.write("""
+Made with **streamlit** by Novianto Sudardan
+""")
+
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
+            footer:after{
+               content: copyright @ 2022 - Made with Streamlit by Novianto Sudardan - DQLab Tetris Program Capstone Project;
+               position:relative;
+               color: black;
+            }
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
