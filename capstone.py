@@ -201,14 +201,14 @@ with c5:
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.decrease_price),
                  name="Indonesia",
-                 line=dict(color="#33CFA5")
+                 line=dict(color="#eb9e34")
               ))
    #Figure Kurs
    fig4.add_trace(
       go.Scatter(x=list(df3.Date), 
                  y=list(df3.close_price),
                  name="Indonesia",
-                 line=dict(color="#e30202"),
+                 line=dict(color="#33CFA5"),
                  visible = False
               ))
    #define annotation
