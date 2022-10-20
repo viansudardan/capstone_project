@@ -137,12 +137,12 @@ with c4:
               ))
 
    #define annotation
-   dec_price = [dict(x=df8.Date,
-                     y=df8.decrease_price,
+   dec_price = [dict(x=df9.Date,
+                     y=df9.decrease_price,
                      #xref="x", yref="y"
                      )]
-   cl_price = [dict(x=df8.Date,
-                    y=df8.close_price,
+   cl_price = [dict(x=df9.Date,
+                    y=df9.close_price,
                     #xref="x", yref="y"
                     )]
 
