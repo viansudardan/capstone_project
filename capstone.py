@@ -6,14 +6,6 @@ import yfinance as yf
 
 st.set_page_config(layout='wide')
 
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-#col1, col2, col3 = st.columns(3)
-##col1.metric("Temperature", "70 °F", "1.2 °F")
-#col2.metric("Wind", "9 mph", "-8%")
-#col3.metric("Humidity", "86%", "4%")
-
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
 st.write("""
@@ -42,6 +34,8 @@ with c2:
 c3, c4 = st.columns([1,2])
 with c3:
    #st.markdown('Dampak lainnya adalah biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara yang mengambil bahan baku dari AS. Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan berimbas pada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadap mata uang lainnya.')
+   with open('style.css') as f:
+      st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
    st.markdown('Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan berimbas pada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadap mata uang lainnya.')
 with c4:
      #load dataset
