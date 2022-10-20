@@ -348,7 +348,7 @@ Made with **streamlit** by Novianto Sudardan
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
+            footer {visibility: visible;}
             footer:after{
                content: copyright @ 2022 - Made with Streamlit by Novianto Sudardan - DQLab Tetris Program Capstone Project;
                position:relative;
