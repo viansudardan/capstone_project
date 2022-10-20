@@ -80,7 +80,7 @@ with c4:
                  line=dict(color="#747375")
               ))
    fig3.add_trace(
-      go.Scatter(x=list(df9.Date), 
+      go.Scatter(x=list(df9.Tanggal), 
                  y=list(df9.decrease_price),
                  name="Kuwait",
                  line=dict(color="#0a704b")
@@ -122,7 +122,7 @@ with c4:
                  visible = False
               ))
    fig3.add_trace(
-      go.Scatter(x=list(df9.Date), 
+      go.Scatter(x=list(df9.Tanggal), 
                  y=list(df9.close_price),
                  name="Kuwait",
                  line=dict(color="#0a704b"),
