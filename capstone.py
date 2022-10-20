@@ -180,8 +180,10 @@ with c4:
    
    fig3.update_layout(title = 'Nilai Valuasi Mata Uang Dunia Terhadap Dollar AS', title_font_size = 20, paper_bgcolor = "#e4e4fe", xaxis_title='Periode', yaxis_title='Nilai')
    fig3.show()
-   a = st.plotly_chart(fig3, use_container_width=True)
-   st.markdown("<p style=border-radius: 5px;'>a</p>", unsafe_allow_html=True)
+   f = st.plotly_chart(fig3, use_container_width=True)
+   #with open('style.css') as f:
+   #   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+   st.markdown(f"<p style=border-radius: 5px;'>{f.read()}</p>", unsafe_allow_html=True)
    st.caption("<p style='text-align: center;'>Sumber : Yahoo Finance</p>", unsafe_allow_html=True)
 
 
