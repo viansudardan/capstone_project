@@ -6,7 +6,7 @@ import yfinance as yf
 
 st.set_page_config(layout='wide')
 
-st.image('./inflasi.jpg')
+st.image('./inflasi copy.jpg')
 st.markdown("<h1 style='text-align: center; color: black;'>Dampak Inflasi AS terhadap Perekonomian Indonesia</h1>", unsafe_allow_html=True)
 st.write('---')
 st.write("""
