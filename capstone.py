@@ -35,7 +35,7 @@ with c3:
    #st.markdown('Dampak lainnya adalah biaya bahan baku yang diambil dari AS atau dikirim dari AS akan mengalami kenaikan harga. Hal ini akan berimbas kepada inflasi global dikarenakan kenaikan harga ini akan meningkatkan biaya produksi sehingga produk yang dihasilkan akan mengalami kenaikan harga yang akan dibebankan kepada konsumen sehingga ada transmisi inflasi yang tinggi di AS terhadap harga produk di berbagai negara yang mengambil bahan baku dari AS. Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan bunga yang tinggi, hal ini akan berimbas pada nilai tukar mata uang dollar AS yang akan semakin perkasa terhadap mata uang lainnya.')
    #with open('style.css') as f:
    #   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-   st.markdown("<p style='color: black; padding: 10px 10px 10px 20px; border-radius: 0px; border: 1px solid #CCCCCC;'> Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan nilai suku bunga yang tinggi, hal ini akan berimbas pada nilai kurs dollar AS yang akan semakin menguat, terlihat valuasi mata uang dunia yang cenderung menurun dalam waktu setahun terakhir.</p>", unsafe_allow_html=True)
+   st.markdown("<p style='color: black; padding: 10px 10px 10px 20px; border-radius: 0px; border: 1px solid #CCCCCC;'> Peningkatan suku bunga di AS akan membuat para investor menginvestasikan modalnya pada pasar AS karena tergiur dengan nilai suku bunga yang tinggi, hal ini berimbas pada nilai kurs dollar AS yang semakin menguat, pergerakan nilai mata uang dunia yang cenderung menurun dalam setahun terakhir.</p>", unsafe_allow_html=True)
 
 with c4:
      #load dataset
