@@ -268,7 +268,7 @@ with c6:
    container.write('Nilai mata uang Rupiah juga terkena dampaknya, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs mata uang Rupiah sebesar 15.175,20 terhadap dollar AS. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
    f = """
    <style>
-   div.css-169ubvz.e1tzin5v0
+   div.css-169ubvz e1tzin5v0
    {
    background-color: #e0e0e0e0;
    border : 1px solid #e0e0e0e0;
