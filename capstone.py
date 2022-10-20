@@ -12,24 +12,6 @@ Made with **streamlit** by Novianto Sudardan
 """)
 st.markdown('Kondisi perekonomian dunia saat ini tengah mengalami guncangan hebat akibat dari kondisi yang kian tidak menentu, dimulai dari krisis kesehatan global akibat pandemi COVID-19 yang terjadi pada awal tahun 2020, dilanjutkan dengan isu geopolitik antara Rusia dan Ukrania yang menyebabkan _supply disruption_ terhadap berbagai komoditas. Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara _superpower_ pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS _(Bureau of Labor Statistics)_ mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir. Untuk merespon kebijakan tersebut, Bank Sentral beberapa negara mau tidak mau juga ikut meningkatkan suku bunganya untuk menahan keluarnya arus modal asing _(capital outflow)_, tercatat Bank Indonesia (BI) menaikan suku bunga acuan menjadi 4,25% pada bulan September 2022.')
 
-#with open('./style.css') as f:
-#   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-#f = """
-#<style>
-#[data-testid="column"]
-#[div.css-kb7dt5.e1tzin5v3]
-#{
-#background-color: #e0e0e0e0;
-#border : 1px solid #e0e0e0e0;
-#padding: 20px 20px 20px 70px;
-#padding: 5% 5% 5% 10%;
-#border-radius:10px;
-#} 
-#</style>
-#"""
-#st.markdown(f, unsafe_allow_html=True)
-
 c1, c2 = st.columns([1,1])
 with c1:
    #st.markdown("Tidak terlepas dari kondisi krisis, Amerika Serikat (AS) sebagai negara superpower pun terkena imbas dari isu ini, Pada bulan Juni 2022, Biro Statistik Tenaga Kerja AS (Bureau of Labor Statistics) mencatat tingkat inflasi sempat menembus laju tertingginya sepanjang tahun 2022 pada nilai 9,1%, ini adalah level tertinggi dalam 40 tahun terakhir, bahkan jika keadaan terus memburuk tidak menutup kemungkinan akan menyebabkan resesi. Tercatat AS pernah mencatat tingkat inflasi tertinggi sepanjang sejarah sebesar 12,3% pada bulan Desember 1974. Adapun kebijakan yang diambil oleh pemerintah AS melalui Bank Sentral nya, The Federal Reserve (The Fed) pada saat itu adalah dengan menaikan suku bunga acuan. Data pada bulan September 2022 tercatat tingkat inflasi AS menurun menjadi 8,2%, namun ini masih tergolong tinggi, hal ini mendorong The Fed meningkatkan suku bunga acuan menjadi 3,25% pada bulan September 2022")
@@ -278,9 +260,24 @@ with c6:
    #fig5 = go.Figure()
    #fig5.update_layout(autosize=True)
    #fig5.update_layout(text='Begitu juga dengan nilai mata uang Rupiah yanag melemah terhadap dollar AS, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs Rupiah sebesar 15.175,20. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
+   
+   #with open('./style.css') as f:
+   #   st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
    container = st.container()
    container.write('Nilai mata uang Rupiah juga terkena dampaknya, sampai dengan saat ini valusai mata uang Rupiah sudah melemah lebih dari 1.000 Rupiah semenjak tahun lalu, tercatat pada akhir bulan September 2022 kurs mata uang Rupiah sebesar 15.175,20 terhadap dollar AS. Tidak menutup kemungkinan akan semakin melemah jika pemerintah tidak memiliki strategi yang tepat untuk mengatasinya.')
-
+   f = """
+   <style>
+   div.css-169ubvz.e1tzin5v0
+   {
+   background-color: #e0e0e0e0;
+   border : 1px solid #e0e0e0e0;
+   padding: 20px 20px 20px 70px;
+   border-radius:10px;
+   } 
+   </style>
+   """
+   st.markdown(f, unsafe_allow_html=True)
 st.markdown('Inflasi yang terjadi di AS juga dapat mengganggu kinerja ekspor Indonesia. Jika konsumsi rumah tangga di AS menurun, maka hal ini dapat mempengaruhi permintaan dari komoditas ekspor Indonesia yang juga akan mengalami penurunan sehingga devisa negara juga akan mengalami penurunan. Namun, pada kali ini Pemerintah Indonesia terselamatkan karena harga komoditas ekspor seperti kelapa sawit dan batu bara mengalami kenaikan sehingga kinerja perdagangan luar negeri masih tumbuh secara positif ditengah tekanan ekonomi global. Pertumbuhan ekonomi Indonesia pada kuartal II tahun 2022 cukup impresif berada di angka 5,4%. Untuk menghitung pertumbuhan ekonomi dapat dilakukan dengan menggunakan perhitungan Pendapatan Domestik Bruto (PDB) atas dasar harga konstan. Rumus umum untuk PDB dengan pendekatan pengeluaran adalah penjumlahan dari semua konsumsi, investasi, pengeluaran pemerintah, dan perdagangan luar negeri.')
 #st.markdown('dan pertumbuhan Indonesia pada kuartal III tahun 2022 diproyeksikan akan meningkat sebesar 0,1% yaitu berada di angka 5,5%.')
 c7, c8 = st.columns([1,1])
